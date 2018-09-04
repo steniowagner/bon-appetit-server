@@ -1,0 +1,27 @@
+{
+  "name": "bon-appetit-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/bin/index.js",
+  "scripts": {
+    "start": "node ./src/bin/www",
+    "dev": "NODE_ENV=development DEBUG=bon-appetit-api:* nodemon ./src/bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steniowagner/bon-appetit-server.git"
+  },
+  "author": "Stenio Wagner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steniowagner/bon-appetit-server/issues"
+  },
+  "homepage": "https://github.com/steniowagner/bon-appetit-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.13",
+    "nodemon": "^1.18.4"
+  }
+}
