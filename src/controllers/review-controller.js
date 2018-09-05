@@ -4,25 +4,12 @@ const ReviewDAO = require('../dao/review-dao');
 
 exports.create = async (req, res, next) => {
   try {
-    const {
-      name,
-      profileImageURL,
-      review,
-      stars,
-    } = req.body;
-
-    const { _id } = await ReviewDAO.create({
-      name,
-      profileImageURL,
-      review,
-      stars,
-    });
+    const { _id } = await ReviewDAO.create({ ...req.body });
 
     return res.status(201).send({
       message: 'Review created with Success!',
       id: _id,
     });
-
   } catch (err) {
     debug(err);
 
@@ -32,7 +19,7 @@ exports.create = async (req, res, next) => {
   }
 };
 
-exports.read = async (req, res, next) => {
+exports.readAll = async (req, res, next) => {
   try {
     const reviews = await ReviewDAO.readAll();
 
@@ -41,6 +28,10 @@ exports.read = async (req, res, next) => {
     });
   } catch (err) {
     debug(err);
+
+    return res.status(500).send({
+      message: 'Error when trying to read Review.',
+    });
   }
 };
 
@@ -48,13 +39,29 @@ exports.readById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
+    if (!id) {
+      return res.status(400).json({
+        message: `The field 'id' mandatory.`,
+      });
+    }
+
     const review = await ReviewDAO.readById(id);
 
-    return res.status(200).send({
-      review,
+    if (review) {
+      return res.status(200).json({
+        review,
+      });
+    }
+
+    return res.status(404).json({
+      message: 'Review Not Found',
     });
   } catch (err) {
     debug(err);
+
+    return res.status(500).send({
+      message: 'Error when trying to read Review.',
+    });
   }
 };
 
@@ -69,6 +76,10 @@ exports.update = async (req, res, next) => {
     });
   } catch (err) {
     debug(err);
+
+    return res.status(500).send({
+      message: 'Error when trying to Update Review.',
+    });
   }
 };
 
@@ -76,12 +87,28 @@ exports.delete = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    await ReviewDAO.delete(id);
+    if (!id) {
+      return res.status(400).json({
+        message: `The field 'id' mandatory.`,
+      });
+    }
 
-    return res.status(200).send({
-      message: 'Review deleted with success!',
+    const reviewDeleted = await ReviewDAO.delete(id);
+
+    if (reviewDeleted) {
+      return res.status(200).json({
+        message: 'Dishe Deleted with Success!',
+      });
+    }
+
+    return res.status(404).json({
+      message: 'Review Not Found',
     });
   } catch (err) {
     debug(err);
+
+    return res.status(500).send({
+      message: 'Error when trying to Delete Review.',
+    });
   }
-}
+};

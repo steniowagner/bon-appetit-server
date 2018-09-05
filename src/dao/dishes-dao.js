@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const ReviewModel = require('../models/Review');
-const Review = mongoose.model('Review');
+const DishesModel = require('../models/Dishes');
+const Dishes = mongoose.model('Dishes');
 
 exports.create = async (data) => {
   try {
-    const review = new Review(data);
-    return await review.save();
+    const dishes = new Dishes(data);
+    return await dishes.save();
   } catch (err) {
     throw err;
   }
@@ -13,7 +13,7 @@ exports.create = async (data) => {
 
 exports.readAll = async () => {
   try {
-    return await Review.find({}, { '__v': 0 });
+    return await Dishes.find({}, { '__v': 0 });
   } catch (err) {
     throw err;
   }
@@ -21,7 +21,7 @@ exports.readAll = async () => {
 
 exports.readById = async (id) => {
   try {
-    return await Review.findById(id, { '__v': 0 });
+    return await Dishes.findById(id, { '__v': 0 });
   } catch (err) {
     throw err;
   }
@@ -29,15 +29,15 @@ exports.readById = async (id) => {
 
 exports.update = async (id, data) => {
   try {
-    return await Review.findByIdAndUpdate(id, data, { new: true });
-  } catch (err) {
+    return await Dishes.findByIdAndUpdate(id, data, { new: true });
+  } catch(err) {
     throw err;
   }
 };
 
 exports.delete = async (id) => {
   try {
-    return await Review.findByIdAndRemove(id);
+    return await Dishes.findByIdAndRemove(id);
   } catch (err) {
     throw err;
   }
