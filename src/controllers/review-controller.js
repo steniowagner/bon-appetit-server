@@ -30,7 +30,7 @@ exports.readAll = async (req, res, next) => {
     debug(err);
 
     return res.status(500).send({
-      message: 'Error when trying to Read Review.',
+      message: 'Error when trying to Read All Reviews.',
     });
   }
 };
