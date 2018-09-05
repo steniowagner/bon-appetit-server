@@ -7,14 +7,14 @@ exports.create = async (req, res, next) => {
     const { _id } = await DishesDAO.create({ ...req.body });
 
     return res.status(201).json({
-      message: 'Dishe created with Success!',
+      message: 'Dishe Created with Success!',
       id: _id,
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).send({
-      message: 'Error when trying to persist Dishes.',
+      message: 'Error when trying to Create Dishes.',
     });
   }
 };
@@ -30,7 +30,7 @@ exports.readAll = async (req, res, next) => {
     debug(err);
 
     return res.status(500).send({
-      message: 'Error when trying to read Dishes.',
+      message: 'Error when trying to Read Dishes.',
     });
   }
 };
@@ -60,7 +60,7 @@ exports.readById = async (req, res, next) => {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to read Dishe.',
+      message: 'Error when trying to Read Dishe.',
     });
   }
 };
@@ -78,7 +78,7 @@ exports.update = async (req, res, next) => {
     debug (err);
 
     return res.status(500).json({
-      message: 'Error when trying to update Dishe.',
+      message: 'Error when trying to Update Dishe.',
     });
   }
 };
@@ -97,7 +97,7 @@ exports.delete = async (req, res, next) => {
 
     if (disheDeleted) {
       return res.status(200).json({
-        message: 'Dishe deleted with Success!',
+        message: 'Dishe Deleted with Success!',
       });
     }
 
@@ -108,7 +108,7 @@ exports.delete = async (req, res, next) => {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to delete Dishe.',
+      message: 'Error when trying to Delete Dishe.',
     });
   }
 };

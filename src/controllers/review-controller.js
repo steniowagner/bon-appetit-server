@@ -7,14 +7,14 @@ exports.create = async (req, res, next) => {
     const { _id } = await ReviewDAO.create({ ...req.body });
 
     return res.status(201).send({
-      message: 'Review created with Success!',
+      message: 'Review Created with Success!',
       id: _id,
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).send({
-      message: 'Error when trying to persist Review.',
+      message: 'Error when trying to Create Review.',
     });
   }
 };
@@ -30,7 +30,7 @@ exports.readAll = async (req, res, next) => {
     debug(err);
 
     return res.status(500).send({
-      message: 'Error when trying to read Review.',
+      message: 'Error when trying to Read Review.',
     });
   }
 };
@@ -60,7 +60,7 @@ exports.readById = async (req, res, next) => {
     debug(err);
 
     return res.status(500).send({
-      message: 'Error when trying to read Review.',
+      message: 'Error when trying to Read Review.',
     });
   }
 };

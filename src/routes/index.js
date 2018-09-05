@@ -10,5 +10,6 @@ router.get('/', (req, res) => {
 
 router.use('/review', require('./review'));
 router.use('/dishes', require('./dishes'));
+router.use('/restaurant', require('./restaurant'));
 
 module.exports = router;
