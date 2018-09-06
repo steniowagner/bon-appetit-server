@@ -27,6 +27,14 @@ exports.readById = async (id) => {
   }
 };
 
+exports.readByDisheType = async (disheType) => {
+  try {
+    return await Restaurant.find({ dishesTypes: disheType });
+  } catch (err) {
+    throw err;
+  }
+};
+
 exports.update = async (id, data) => {
   try {
     return await Restaurant.findByIdAndUpdate(id, data, { new: true });

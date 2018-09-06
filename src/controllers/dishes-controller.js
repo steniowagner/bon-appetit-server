@@ -1,6 +1,36 @@
 const debug = require('debug')('bon-appetit-api:dishes-controller');
 const mongoose = require('../db');
+
 const DishesDAO = require('../dao/dishes-dao');
+const RestaurantDAO = require('../dao/restaurant-dao');
+const ReviewDAO = require('../dao/review-dao');
+
+const shuffleArray = require('../utils/shuffle-array');
+
+const _getRandomRestaurant = async (disheCategory) => {
+  const allRestaurants = await RestaurantDAO.readByDisheType(disheCategory);
+
+  const restaurantsShuffled = shuffleArray(allRestaurants);
+
+  const randomNumber = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+
+  const restaurant = {
+    closeAt: restaurantsShuffled[0].operatingHours.close,
+    name: restaurantsShuffled[0].name,
+    id: restaurantsShuffled[0].id,
+    isOpen: (randomNumber % 2 === 0),
+  };
+
+  return restaurant;
+};
+
+const _getRandomReviews = async (numberReviews) => {
+  const allReviews = await ReviewDAO.readAll();
+
+  const reviewsShuffled = shuffleArray(allReviews);
+
+  return reviewsShuffled.slice(0, numberReviews);
+};
 
 exports.create = async (req, res, next) => {
   try {
@@ -48,8 +78,13 @@ exports.readById = async (req, res, next) => {
     const dishe = await DishesDAO.readById(id);
 
     if (dishe) {
+      const restaurant = await _getRandomRestaurant(dishe.category);
+      const reviews = await _getRandomReviews(dishe.reviews);
+
       return res.status(200).json({
         dishe,
+        restaurant,
+        reviews,
       });
     }
 
