@@ -1,0 +1,91 @@
+const EventDAO = require('../dao/event-dao');
+const DishesDAO = require('../dao/dishes-dao');
+
+const getUserLocation = require('../utils/get-user-location');
+const shuffleArray = require('../utils/shuffle-array');
+
+const MAX_ITEMS = 12;
+
+const _getInYourCityEvents = async () => {
+  const allEvents = await EventDAO.readAll();
+
+  const eventsShuffled = shuffleArray(allEvents).slice(0, MAX_ITEMS);
+
+  const events = eventsShuffled.map(event => ({
+    imageURL: event.imageURL,
+    title: event.title,
+    description: event.description,
+    id: event._id,
+  }));
+
+  return events;
+};
+
+const _getYouMightLikeDishes = (allDishes) => {
+  const randomDistance = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+
+  const dishes = [];
+
+  for (let i = 0; i < allDishes.length; i++) {
+    if (i % 2 !== 0) {
+      dishes.push({
+        imageURL: allDishes[i].imageURL,
+        price: allDishes[i].price,
+        title: allDishes[i].title,
+        stars: allDishes[i].stars,
+        reviews: allDishes[i].reviews,
+        id: allDishes[i]._id,
+        distance: randomDistance,
+      });
+    }
+  }
+
+  return dishes;
+};
+
+const _getPopularDishes = (allDishes) => {
+  const dishes = [];
+
+  for (let i = 0; i < allDishes.length; i++) {
+    if (i % 2 === 0) {
+      dishes.push({
+        imageURL: allDishes[i].imageURL,
+        price: allDishes[i].price,
+        title: allDishes[i].title,
+        stars: allDishes[i].stars,
+        id: allDishes[i]._id,
+      });
+    }
+  }
+
+  return dishes;
+};
+
+const _getDishesSectionsData = async () => {
+  const dishes = await DishesDAO.readAll();
+
+  const dishesShuffled = shuffleArray(dishes);
+
+  const youMightLikeDishes = _getYouMightLikeDishes(dishesShuffled);
+  const popularDishes = _getPopularDishes(dishesShuffled);
+
+  return {
+    youMightLikeDishes,
+    popularDishes,
+  };
+};
+
+exports.getUserDashboard = async (req, res, next) => {
+  const userLocation = getUserLocation();
+
+  const inYourCityEvents = await _getInYourCityEvents();
+
+  const { popularDishes, youMightLikeDishes } = await _getDishesSectionsData();
+
+  return res.status(200).json({
+    userLocation,
+    inYourCityEvents,
+    youMightLikeDishes,
+    popularDishes,
+  });
+};

@@ -22,6 +22,10 @@ const DishesSchema = ({
     type: Number,
     required: true,
   },
+  reviews: {
+    type: Number,
+    required: true,
+  },
   price: {
     type: Number,
     require: true,
