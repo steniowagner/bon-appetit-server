@@ -39,7 +39,7 @@ const RestaurantSchema = ({
   },
   dishesTypes: [{
     type: String,
-    enum: ['BARBECUE', 'DESSERT', 'FAST-FOOD', 'HOMEMADE', 'JAPANESE', 'PASTA', 'PIZZA', 'SALAD', 'SEAFOOD'],
+    enum: ['Barbecue', 'Dessert', 'Fast-Food', 'Homemade', 'Japanase', 'Pasta', 'Pizza', 'Salad', 'Seafood'],
     required: true,
   }]
 });

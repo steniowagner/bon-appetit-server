@@ -19,6 +19,18 @@ exports.readAll = async () => {
   }
 };
 
+exports.readBasedDishesType = async (dishesTypes) => {
+  try {
+    return await Dishes.find({
+      type: {
+        $in: dishesTypes,
+      }},
+      { '__v': 0 });
+  } catch (err) {
+    throw err;
+  }
+};
+
 exports.readById = async (id) => {
   try {
     return await Dishes.findById(id, { '__v': 0 });
@@ -26,6 +38,7 @@ exports.readById = async (id) => {
     throw err;
   }
 };
+
 
 exports.update = async (id, data) => {
   try {

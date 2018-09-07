@@ -1,5 +1,37 @@
 const debug = require('debug')('bon-appetit-api:restaurant-controller');
+
 const RestaurantDAO = require('../dao/restaurant-dao');
+const DishesDAO = require('../dao/dishes-dao');
+
+const shuffleArray = require('../utils/shuffle-array');
+
+const _getDishesArray = (dishes, disheType) => {
+  const dishesFiltered = dishes.filter(dishe => dishe.type === disheType)
+  const shuffledArray = shuffleArray(dishesFiltered);
+  
+  const MAX_VALUE_RANDOM_NUMBER = dishes.length;
+  const MIN_VALUE_RANDOM_NUMBER = 1;
+
+  const randomNumber = Math.floor(Math.random() * (MAX_VALUE_RANDOM_NUMBER - MIN_VALUE_RANDOM_NUMBER + 1)) + MIN_VALUE_RANDOM_NUMBER;
+
+  const dishesArray = shuffledArray.slice(0, randomNumber);
+
+  return dishesArray;
+};
+
+const _getRestaurantMenu = async (dishesTypes) => {
+  const dishes = await DishesDAO.readBasedDishesType(dishesTypes);
+  
+  const menu = [];
+
+  dishesTypes.forEach(disheType => {
+    menu.push({
+      [disheType]: _getDishesArray(dishes, disheType),
+    });
+  });
+
+  return menu;
+};
 
 exports.create = async (req, res, next) => {
   try {
@@ -45,10 +77,12 @@ exports.readById = async (req, res, next) => {
     }
 
     const restaurant = await RestaurantDAO.readById(id);
+    const menu = await _getRestaurantMenu(restaurant.dishesTypes);
 
     if (restaurant) {
       return res.status(200).json({
         restaurant,
+        menu,
       });
     }
 

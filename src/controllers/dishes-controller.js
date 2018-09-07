@@ -7,12 +7,15 @@ const ReviewDAO = require('../dao/review-dao');
 
 const shuffleArray = require('../utils/shuffle-array');
 
-const _getRandomRestaurant = async (disheCategory) => {
-  const allRestaurants = await RestaurantDAO.readByDisheType(disheCategory);
+const _getRandomRestaurant = async (dishesTypes) => {
+  const allRestaurants = await RestaurantDAO.readByDisheType(dishesTypes);
 
   const restaurantsShuffled = shuffleArray(allRestaurants);
 
-  const randomNumber = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+  const MAX_VALUE_RANDOM_NUMBER = 2;
+  const MIN_VALUE_RANDOM_NUMBER = 1;
+
+  const randomNumber = Math.floor(Math.random() * (MAX_VALUE_RANDOM_NUMBER - MIN_VALUE_RANDOM_NUMBER + 1)) + MIN_VALUE_RANDOM_NUMBER;
 
   const restaurant = {
     closeAt: restaurantsShuffled[0].operatingHours.close,
@@ -78,7 +81,7 @@ exports.readById = async (req, res, next) => {
     const dishe = await DishesDAO.readById(id);
 
     if (dishe) {
-      const restaurant = await _getRandomRestaurant(dishe.category);
+      const restaurant = await _getRandomRestaurant(dishe.type);
       const reviews = await _getRandomReviews(dishe.reviews);
 
       return res.status(200).json({

@@ -13,9 +13,9 @@ const DishesSchema = ({
     type: String,
     required: true,
   },
-  category: {
+  type: {
     type: String,
-    enum: ['BARBECUE', 'DESSERT', 'FAST-FOOD', 'HOMEMADE', 'JAPANESE', 'PASTA', 'PIZZA', 'SALAD', 'SEAFOOD'],
+    enum: ['Barbecue', 'Dessert', 'Fast-Food', 'Homemade', 'Japanase', 'Pasta', 'Pizza', 'Salad', 'Seafood'],
     require: true,
   },
   stars: {
