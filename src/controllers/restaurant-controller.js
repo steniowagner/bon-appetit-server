@@ -151,3 +151,21 @@ exports.delete = async (req, res, next) => {
     });
   }
 };
+
+exports.filter = async (req, res, next) => {
+  try {
+    const { userLocation, maxDistance, dishesTypes } = req.body;
+    
+    const restaurants = await RestaurantDAO.filter(userLocation, maxDistance, dishesTypes)
+    
+    return res.status(200).json({
+      restaurants,
+    });
+  } catch (err) {
+    debug(err);
+
+    return res.status(500).json({
+      message: 'Error when trying to Filter Restaurants.',
+    });
+  }
+};

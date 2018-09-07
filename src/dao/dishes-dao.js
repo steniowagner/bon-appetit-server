@@ -22,10 +22,12 @@ exports.readAll = async () => {
 exports.readBasedDishesType = async (dishesTypes) => {
   try {
     return await Dishes.find({
-      type: {
-        $in: dishesTypes,
-      }},
-      { '__v': 0 });
+        type: {
+          $in: dishesTypes,
+        }
+      },
+      { '__v': 0 },
+    );
   } catch (err) {
     throw err;
   }

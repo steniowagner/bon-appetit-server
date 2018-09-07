@@ -1,6 +1,6 @@
 const mongoose = require('../db');
 
-const RestaurantSchema = ({
+const RestaurantSchema = new mongoose.Schema({
   imageURL: {
     type: String,
     required: true,
@@ -18,9 +18,13 @@ const RestaurantSchema = ({
     required: true,
   },
   location: {
+    type: {
+      type: String,
+      default: 'Point',
+    },
     coordinates: {
-      type: [Number, Number],
-      default: [0, 0]
+      type: [Number],
+      default: [0, 0],
     },
     address: {
       type: String,
@@ -43,5 +47,7 @@ const RestaurantSchema = ({
     required: true,
   }]
 });
+
+RestaurantSchema.index({ location: '2dsphere' });
 
 module.exports = mongoose.model('Restaurant', RestaurantSchema);

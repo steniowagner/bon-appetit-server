@@ -50,3 +50,41 @@ exports.delete = async (id) => {
     throw err;
   }
 };
+
+exports.filter = async (userLocation, maxDistance, types) => {
+  const { latitude, longitude } = userLocation;
+
+  const nearRestaurants = await Restaurant.find({
+    location: {
+      $near: {
+        $geometry: {
+          coordinates: [latitude, longitude],
+          type: 'Point',
+        },
+        $maxDistance: maxDistance * 1000,
+      }
+    }
+  }, { _id: 1 });
+  
+  const nearRestaurantsIds =
+    nearRestaurants.map(restaurant => mongoose.Types.ObjectId(restaurant._id));
+
+  try {
+    return await Restaurant.aggregate()      
+      .match({ _id: { $in: nearRestaurantsIds }})
+      .group({ _id: '$_id', restaurants: { $push: '$$ROOT' }})
+      .then((res, err) => {
+        if (!err) {
+          return res.map(item => ({
+            _id: item.restaurants[0]._id,
+            name: item.restaurants[0].name,
+            imageURL: item.restaurants[0].imageURL,
+            address: item.restaurants[0].location.address,
+            stars: item.restaurants[0].stars,
+          }))            
+        }
+      });
+  } catch (err) {
+    throw err;
+  }
+};
