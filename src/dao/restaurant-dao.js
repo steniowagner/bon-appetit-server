@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 const RestaurantModel = require('../models/Restaurant');
 const Restaurant = mongoose.model('Restaurant');
 
-const calculateDistanceCoordinates = require('../utils/calculate-distance-coordinates');
-
 exports.create = async (data) => {
   try {
     const restaurant = new Restaurant(data);
@@ -53,36 +51,13 @@ exports.delete = async (id) => {
   }
 };
 
-exports.filter = async (userCoordinates, maxDistance, types) => {
+exports.filterBasedDishesTypes = async (types) => {
   try {
     return await Restaurant.aggregate()
       .unwind('$dishesTypes')      
       .match({ dishesTypes: { $in: types }})
-      .group({ _id: '$_id', restaurants: { $push: '$$ROOT' }})
-      .then((res, err) => {
-        if (!err) {
-          const restaurants = res.filter(item => {
-            const { coordinates } = item.restaurants[0].location;
-            
-            const distanceBetweenCoordinates = calculateDistanceCoordinates(userCoordinates, {
-              latitude: coordinates[0],
-              longitude: coordinates[1],
-            });
+      .group({ _id: '$_id', restaurants: { $push: '$$ROOT' }});
 
-            const isNear = (distanceBetweenCoordinates <= maxDistance);
-
-            return isNear;
-          }).map(item => ({
-            _id: item.restaurants[0]._id,
-            name: item.restaurants[0].name,
-            imageURL: item.restaurants[0].imageURL,
-            address: item.restaurants[0].location.address,
-            stars: item.restaurants[0].stars,
-          }));
-
-          return restaurants;
-        }
-      });
   } catch (err) {
     throw err;
   }

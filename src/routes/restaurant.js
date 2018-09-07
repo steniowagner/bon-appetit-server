@@ -12,5 +12,6 @@ router.delete('/:id', RestaurantController.delete);
 
 // filter
 router.post('/filter', RestaurantController.filter);
+router.post('/nearby', RestaurantController.readByDishesType);
 
 module.exports = router;

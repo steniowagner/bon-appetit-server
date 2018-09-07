@@ -3,6 +3,7 @@ const debug = require('debug')('bon-appetit-api:restaurant-controller');
 const RestaurantDAO = require('../dao/restaurant-dao');
 const DishesDAO = require('../dao/dishes-dao');
 
+const calculateDistanceCoordinates = require('../utils/calculate-distance-coordinates');
 const shuffleArray = require('../utils/shuffle-array');
 
 const _getDishesArray = (dishes, disheType) => {
@@ -98,6 +99,50 @@ exports.readById = async (req, res, next) => {
   }
 };
 
+exports.readByDishesType = async (req, res, next) => {
+  const { userLocation, type } = req.body;
+
+  const MAX_RANDOM_NUMBER = 2;
+  const MIN_RANDOM_NUMBER = 1;
+
+  try {
+    const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes([type]);
+
+    const restaurants = restaurantsFilteredByDishesTypes.map(item => {
+      const { coordinates } = item.restaurants[0].location;
+      
+      const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
+        latitude: coordinates[0],
+        longitude: coordinates[1],
+      });
+
+      const randomNumber = Math.floor(Math.random() * (MAX_RANDOM_NUMBER - MIN_RANDOM_NUMBER + 1)) + MIN_RANDOM_NUMBER;
+
+      return {
+        id: item.restaurants[0]._id,
+        stars: item.restaurants[0].stars,
+        description: item.restaurants[0].description,
+        name: item.restaurants[0].name,
+        imageURL: item.restaurants[0].imageURL,
+        isOpen: (randomNumber % 2 === 0),
+        distance: distanceBetweenCoordinates.toFixed(2),
+      };
+    }).sort((first, second) => {
+      return first.distance - second.distance;
+    });
+
+    return res.status(200).json({
+      restaurants,
+    });
+  } catch (err) {
+    debug(err);
+
+    return res.status(500).json({
+      message: 'Error when trying to Read by Dishe Type.',
+    });
+  }
+};
+
 exports.update = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -156,8 +201,27 @@ exports.filter = async (req, res, next) => {
   try {
     const { userLocation, maxDistance, dishesTypes } = req.body;
     
-    const restaurants = await RestaurantDAO.filter(userLocation, maxDistance, dishesTypes)
+    const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes(dishesTypes);
+
+    const restaurants = restaurantsFilteredByDishesTypes.filter(item => {
+      const { coordinates } = item.restaurants[0].location;
       
+      const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
+        latitude: coordinates[0],
+        longitude: coordinates[1],
+      });
+
+      const isNear = (distanceBetweenCoordinates <= maxDistance);
+
+      return isNear;
+    }).map(item => ({
+      _id: item.restaurants[0]._id,
+      name: item.restaurants[0].name,
+      imageURL: item.restaurants[0].imageURL,
+      address: item.restaurants[0].location.address,
+      stars: item.restaurants[0].stars,
+    }));
+    
     return res.status(200).json({
       restaurants,
     });
