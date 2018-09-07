@@ -157,7 +157,7 @@ exports.filter = async (req, res, next) => {
     const { userLocation, maxDistance, dishesTypes } = req.body;
     
     const restaurants = await RestaurantDAO.filter(userLocation, maxDistance, dishesTypes)
-    
+      
     return res.status(200).json({
       restaurants,
     });
