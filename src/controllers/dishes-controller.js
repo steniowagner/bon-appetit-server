@@ -37,11 +37,10 @@ const _getRandomReviews = async (numberReviews) => {
 
 exports.create = async (req, res, next) => {
   try {
-    const { _id } = await DishesDAO.create({ ...req.body });
+    await DishesDAO.create(req.body);
 
     return res.status(201).json({
       message: 'Dishe Created with Success!',
-      id: _id,
     });
   } catch (err) {
     debug(err);

@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const DishesModel = require('../models/Dishes');
 const Dishes = mongoose.model('Dishes');
 
-exports.create = async (data) => {
+exports.create = async (dishesData) => {
   try {
-    const dishes = new Dishes(data);
-    return await dishes.save();
+    dishesData.map(async data => {
+      const dishes = new Dishes(data);
+      await dishes.save();
+    });
   } catch (err) {
     throw err;
   }

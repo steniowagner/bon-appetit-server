@@ -1,0 +1,48 @@
+[
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares.jpg",
+    "name": "Açaí do Colares",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.7271887, -38.5902263],
+      "address": "Independência Avenue, 985 - Quintino Cunha, Fortaleza"
+    },
+    "operatingHours": {
+      "open": "17:00",
+      "close": "00:00"
+    },
+    "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos",
+    "dishesTypes": ["Dessert", "Salad"]
+  },
+  
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares.jpg",
+    "name": "Lanche do Abençoado",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.7205323,-38.5650488],
+      "address": "Independência Avenue, 985 - Quintino Cunha, Fortaleza"
+    },
+    "operatingHours": {
+      "open": "17:00",
+      "close": "00:00"
+    },
+    "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos",
+    "dishesTypes": ["Dessert", "Salad"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares.jpg",
+    "name": "LeGusto",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.7401124,-38.5591975],
+      "address": "Independência Avenue, 985 - Quintino Cunha, Fortaleza"
+    },
+    "operatingHours": {
+      "open": "17:00",
+      "close": "00:00"
+    },
+    "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos",
+    "dishesTypes": ["Pizza", "Pasta"]
+  }
+]

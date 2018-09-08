@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const ReviewModel = require('../models/Review');
 const Review = mongoose.model('Review');
 
-exports.create = async (data) => {
+exports.create = async (reviewData) => {
   try {
-    const review = new Review(data);
-    return await review.save();
+    reviewData.map(async data => {
+      const review = new Review(data);
+      await review.save();
+    });
   } catch (err) {
     throw err;
   }

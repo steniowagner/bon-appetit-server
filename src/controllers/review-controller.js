@@ -4,11 +4,10 @@ const ReviewDAO = require('../dao/review-dao');
 
 exports.create = async (req, res, next) => {
   try {
-    const { _id } = await ReviewDAO.create({ ...req.body });
+    await ReviewDAO.create(req.body);
 
     return res.status(201).send({
       message: 'Review Created with Success!',
-      id: _id,
     });
   } catch (err) {
     debug(err);

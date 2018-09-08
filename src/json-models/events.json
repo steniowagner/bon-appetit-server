@@ -1,0 +1,16 @@
+[
+  {
+    "imageURL": "qwe",
+    "title": "qwe",
+    "description": "qwe",
+    "dishesTypes": ["Barbecue", "Dessert"],
+    "restaurantParticipating": 12
+  },
+  {
+    "imageURL": "ehauheuaha",
+    "title": "qwe",
+    "description": "qwe",
+    "dishesTypes": ["Barbecue", "Salad"],
+    "restaurantParticipating": 1
+  }
+]

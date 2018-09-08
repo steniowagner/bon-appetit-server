@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const EventModel = require('../models/Event');
 const Event = mongoose.model('Event');
 
-exports.create = async (data) => {
+exports.create = async (eventData) => {
   try {
-    const event = new Event(data);
-    return await event.save();
+    eventData.map(async data => {
+      const event = new Event(data);
+      await event.save();
+    });    
   } catch (err) {
     throw err;
   }

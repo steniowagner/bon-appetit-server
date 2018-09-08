@@ -36,11 +36,10 @@ const _getRestaurantMenu = async (dishesTypes) => {
 
 exports.create = async (req, res, next) => {
   try {
-    const { _id } = await RestaurantDAO.create({ ...req.body });
+    await RestaurantDAO.create(req.body);
 
     return res.status(201).json({
-      message: 'Restaurant created with Success!',
-      id: _id,
+      message: 'Restaurants created with Success!',
     });
   } catch (err) {
     debug(err);

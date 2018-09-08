@@ -4,11 +4,10 @@ const EventDAO = require('../dao/event-dao');
 
 exports.create = async (req, res, next) => {
   try {
-    const { _id } = await EventDAO.create({ ...req.body });
+    await EventDAO.create(req.body);
 
     return res.status(201).json({
       message: 'Event created with Success!',
-      id: _id,
     });
   } catch (err) {
     debug(err);

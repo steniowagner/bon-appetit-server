@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const RestaurantModel = require('../models/Restaurant');
 const Restaurant = mongoose.model('Restaurant');
 
-exports.create = async (data) => {
+exports.create = async (restaurantsData) => {
   try {
-    const restaurant = new Restaurant(data);
-    return await restaurant.save();
+    restaurantsData.map(async data => {
+      const restaurant = new Restaurant(data);
+      await restaurant.save();
+    });
   } catch (err) {
     throw err;
   }
