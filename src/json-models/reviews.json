@@ -1,26 +1,194 @@
 [
   {
-    "name": "Stenio Wagner",
-    "profileImageURL": "profileImageURL",
-    "review": "Wagnerhuhuahueah",
-    "stars": 13
+    "name": "Aleni Stoakes",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/aleni-stoakes.jpg",
+    "review": "Simply amazing! One of the best things that I had tasted!",
+    "stars": 4.5
+  },
+  {
+    "name": "Alex Holyoake",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/alex-holyoake.jpg",
+    "review": "L-O-V-E I-T! <3",
+    "stars": 5
+  },
+  {
+    "name": "Alexia Vince",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/allef-vinicius.jpg",
+    "review": "Oh, God! This is Heavenly! I want more!",
+    "stars": 5
+  },
+  {
+    "name": "Ana Thomas",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/ana-thomas.jpg",
+    "review": "Just ok, normal taste. Nothing from another World...",
+    "stars": 2.5
   },
   {
     "name": "Beatriz Eliana",
-    "profileImageURL": "profileImaageURL",
-    "review": "huhuahuElianaeah",
-    "stars": 13
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/beatriz-eliana.jpg",
+    "review": "No way! The taste it's amazing! I want more NOW! Do you guys make delivers?",
+    "stars": 5
   },
   {
-    "name": "Manoel Elisval",
-    "profileImageURL": "profileImageURL",
-    "review": "huhuahuElisvaleah",
-    "stars": 13
+    "name": "Brooke Adams",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/brooke-adams.jpg",
+    "review": "The taste it's ok, but something is missing...",
+    "stars": 3
   },
   {
-    "name": "Ana Eridan",
-    "profileImageURL": "profileImageURL",
-    "review": "Eridanhuhuahueah",
-    "stars": 13
+    "name": "Chris Benson",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/chris-benson.jpg",
+    "review": "Holy F*ck! This is so GOOD! I'll come back tomorrow to eat it again!",
+    "stars": 4.5
+  },
+  {
+    "name": "Christine Murphy",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/christine-murphy.jpg",
+    "review": "I've tasted a lot of food already, but that this one makes me feel different... LOVE IT!",
+    "stars": 5
+  },
+  {
+    "name": "Donna Campbell",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/christopher-campbell.jpg",
+    "review": "Oh, GOD! Where it come from? Chief ass?",
+    "stars": 0
+  },
+  {
+    "name": "Christian Lozan",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/cristian-lozan.jpg",
+    "review": "DISGUSTING! How can any person eat this?",
+    "stars": 0.5
+  },
+  {
+    "name": "Daniele Spase",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/daniele-spase.jpg",
+    "review": "Very nice! The taste it's very tropical, and fits perfectly with the City's weather!",
+    "stars": 4.5
+  },
+  {
+    "name": "Dimitrya Schemelev",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/dimitry-schemelev.jpg",
+    "review": "Not bad, really good!",
+    "stars": 4
+  },
+  {
+    "name": "Eli Dafaria",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/eli-defaria.jpg",
+    "review": "Congratulation, fellas! This thing is AMAZING!",
+    "stars": 5
+  },
+  {
+    "name": "Erik Lucatero",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/erik-lucatero.jpg",
+    "review": "JEEZ!!! Do you guys sells through the Internet? HAHA!",
+    "stars": 4
+  },
+  {
+    "name": "Harps Jospeh",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/harps-joseph.jpg",
+    "review": "God bless the men who cooked this food.",
+    "stars": 4.5
+  },
+  {
+    "name": "Hermes Rivera",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/hermes-rivera.jpg",
+    "review": "The taste is so nice and the environment so inviting! I'll back here certainly",
+    "stars": 5
+  },
+  {
+    "name": "Mia Oliveira",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/hian-oliveira.jpg",
+    "review": "F*UCK! I waited for 30 minutes for what? For this?!",
+    "stars": 2.5
+  },
+  {
+    "name": "Jakob Owens",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/jakob-owens.jpg",
+    "review": "Not even the street dogs could eat this sh*t...",
+    "stars": 1.5
+  },
+  {
+    "name": "Jasmine Gillespie",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/james-gillespie.jpg",
+    "review": "Cool. Not more, not less, just cool.",
+    "stars": 3.5
+  },
+  {
+    "name": "Jane Gellidon",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/jane-gellidon.jpg",
+    "review": "This guys really know how to fish someone by the belly, haha! Really good!",
+    "stars": 4.5
+  },
+  {
+    "name": "Jared Sluyter",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/jared-sluyter.jpg",
+    "review": "That is my third time eating this food, and is so good as the first time!",
+    "stars": 4
+  },
+  {
+    "name": "Jess Chanchaleune",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/jeslyn-chanchaleune.jpg",
+    "review": "WOW! I think that I had a piece of heaven in my plate tonight! REALLY GOOD!",
+    "stars": 5
+  },
+  {
+    "name": "John Morrisson",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/john-morrisson.jpg",
+    "review": "IN-LOVE WITH THIS TASTE!!!",
+    "stars": 5
+  },
+  {
+    "name": "July Sun",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/july-sun.jpg",
+    "review": "PLEASE! SOMEONE TEACH THIS GUYS HOW TO COOK!",
+    "stars": 1.5
+  },
+  {
+    "name": "Luna Campioni",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/lucas-campioni.jpg",
+    "review": "How do you guys keep this on Menu?",
+    "stars": 2
+  },
+  {
+    "name": "Maria Ferrero",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/matheus-ferrero.jpg",
+    "review": "Are you sure the name of this is food?",
+    "stars": 2.5
+  },
+  {
+    "name": "Nika Macmillan",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/nik-macmillan.jpg",
+    "review": "I think that can be good at the second time. I'll give a try...",
+    "stars": 3
+  },
+  {
+    "name": "Ramsey Jer",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/ramsey-jer.jpg",
+    "review": "STATUS: IN LOVE WITH THAT FOOD!",
+    "stars": 5
+  },
+  {
+    "name": "Richard Cagle",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/richard-cagle.jpg",
+    "review": "Who's driving the Cooker? God in the flesh?",
+    "stars": 4.5
+  },
+  {
+    "name": "Tatiana Nino",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/tatiana-nino.jpg",
+    "review": "OH MY GOD! That's so GOOD!",
+    "stars": 5
+  },
+  {
+    "name": "Thomas Young",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/thomas-young.jpg",
+    "review": "I really like this one! I'll repeat!",
+    "stars": 4
+  },
+  {
+    "name": "Vivian Souza",
+    "profileImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/reviewers/vini-souza.jpg",
+    "review": "You guys really need to pay a course about How to Cook... Seriouuuslyy...",
+    "stars": 3
   }
 ]

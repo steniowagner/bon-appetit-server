@@ -99,13 +99,18 @@ exports.readById = async (req, res, next) => {
 };
 
 exports.readByDishesType = async (req, res, next) => {
-  const { userLocation, type } = req.body;
-
   const MAX_RANDOM_NUMBER = 2;
   const MIN_RANDOM_NUMBER = 1;
 
+  const { dishesType } = req.query;
+
+  const userLocation = {
+    latitude: parseFloat(req.headers.userlatitude),
+    longitude: parseFloat(req.headers.userlongitude),
+  };
+
   try {
-    const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes([type]);
+    const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes([dishesType]);
 
     const restaurants = restaurantsFilteredByDishesTypes.map(item => {
       const { coordinates } = item.restaurants[0].location;
@@ -123,6 +128,10 @@ exports.readByDishesType = async (req, res, next) => {
         description: item.restaurants[0].description,
         name: item.restaurants[0].name,
         imageURL: item.restaurants[0].imageURL,
+        location: {
+          latitude: item.restaurants[0].location.coordinates[0],
+          longitude: item.restaurants[0].location.coordinates[1],
+        },
         isOpen: (randomNumber % 2 === 0),
         distance: distanceBetweenCoordinates.toFixed(2),
       };
