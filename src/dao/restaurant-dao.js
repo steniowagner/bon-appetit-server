@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const RestaurantModel = require('../models/Restaurant');
 const Restaurant = mongoose.model('Restaurant');
 
+const MAX_ITEMS_PER_PAGE = 10;
+
 exports.create = async (restaurantsData) => {
   try {
     restaurantsData.map(async data => {
@@ -13,9 +15,11 @@ exports.create = async (restaurantsData) => {
   }
 };
 
-exports.readAll = async () => {
+exports.readAll = async (paginationIndex) => {
   try {
-    return await Restaurant.find({}, { '__v': 0 });
+    return await Restaurant.find({}, { '__v': 0 })
+      .skip(MAX_ITEMS_PER_PAGE * paginationIndex)
+      .limit(MAX_ITEMS_PER_PAGE);
   } catch (err) {
     throw err;
   }
@@ -58,8 +62,7 @@ exports.filterBasedDishesTypes = async (types) => {
     return await Restaurant.aggregate()
       .unwind('$dishesTypes')      
       .match({ dishesTypes: { $in: types }})
-      .group({ _id: '$_id', restaurants: { $push: '$$ROOT' }});
-
+      .group({ _id: '$_id', restaurants: { $push: '$$ROOT' }})
   } catch (err) {
     throw err;
   }

@@ -34,6 +34,38 @@ const _getRestaurantMenu = async (dishesTypes) => {
   return menu;
 };
 
+const _getAllRestaurants = async (page) => {
+  const restaurants = await RestaurantDAO.readAll(page);
+  
+  return restaurants;
+};
+
+const _getFilteredRestaurants = async (dishesTypes, userLocation, maxDistance) => {
+  const dishes = (Array.isArray(dishesTypes) ? dishesTypes : [dishesTypes]);
+  const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes(dishes);
+
+  const restaurants = restaurantsFilteredByDishesTypes.filter(item => {
+      const { coordinates } = item.restaurants[0].location;
+      
+      const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
+        latitude: coordinates[0],
+        longitude: coordinates[1],
+      });
+
+      const isNear = (distanceBetweenCoordinates <= maxDistance * 1000);
+
+      return isNear;
+    }).map(item => ({
+      id: item.restaurants[0]._id,
+      name: item.restaurants[0].name,
+      imageURL: item.restaurants[0].imageURL,
+      address: item.restaurants[0].location.address,
+      stars: item.restaurants[0].stars,
+    }));
+
+  return restaurants;
+}
+
 exports.create = async (req, res, next) => {
   try {
     await RestaurantDAO.create(req.body);
@@ -207,29 +239,18 @@ exports.delete = async (req, res, next) => {
 
 exports.filter = async (req, res, next) => {
   try {
-    const { userLocation, maxDistance, dishesTypes } = req.body;
-    
-    const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes(dishesTypes);
+    const { dishesTypes, page, maxDistance } = req.query;
 
-    const restaurants = restaurantsFilteredByDishesTypes.filter(item => {
-      const { coordinates } = item.restaurants[0].location;
-      
-      const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
-        latitude: coordinates[0],
-        longitude: coordinates[1],
-      });
+    const userLocation = {
+      latitude: parseFloat(req.headers.userlatitude),
+      longitude: parseFloat(req.headers.userlongitude),
+    };
 
-      const isNear = (distanceBetweenCoordinates <= maxDistance);
+    const restaurants =
+      dishesTypes === 'all'
+      ? await _getAllRestaurants(page)
+      : await _getFilteredRestaurants(dishesTypes, userLocation, parseFloat(maxDistance));
 
-      return isNear;
-    }).map(item => ({
-      _id: item.restaurants[0]._id,
-      name: item.restaurants[0].name,
-      imageURL: item.restaurants[0].imageURL,
-      address: item.restaurants[0].location.address,
-      stars: item.restaurants[0].stars,
-    }));
-    
     return res.status(200).json({
       restaurants,
     });
