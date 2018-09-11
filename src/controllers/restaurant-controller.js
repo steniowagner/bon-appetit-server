@@ -34,35 +34,44 @@ const _getRestaurantMenu = async (dishesTypes) => {
   return menu;
 };
 
-const _getAllRestaurants = async (page) => {
-  const restaurants = await RestaurantDAO.readAll(page);
-  
+const _filterRestaurantsBasedDistance = (restaurantsDataset, maxDistance, userLocation) => {
+  const restaurants = restaurantsDataset.filter(restaurant => {
+    const { coordinates } = restaurant.location;
+
+    const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
+      latitude: coordinates[0],
+      longitude: coordinates[1],
+    });
+
+    const isInsideSearchRadius = (distanceBetweenCoordinates <= maxDistance);
+
+    return isInsideSearchRadius;
+  }).map(restaurant => ({
+    id: restaurant._id,
+    name: restaurant.name,
+    imageURL: restaurant.imageURL,
+    address: restaurant.location.address,
+    stars: restaurant.stars,
+  }));
+
   return restaurants;
 };
 
-const _getFilteredRestaurants = async (dishesTypes, userLocation, maxDistance) => {
+const _getAllRestaurants = async (maxDistance, userLocation) => {
+  const allRestaurants = await RestaurantDAO.readAll();
+
+  const restaurants = _filterRestaurantsBasedDistance(allRestaurants, maxDistance, userLocation);
+
+  return restaurants;
+};
+
+const _getFilteredRestaurants = async (dishesTypes, maxDistance, userLocation) => {
   const dishes = (Array.isArray(dishesTypes) ? dishesTypes : [dishesTypes]);
+  
   const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes(dishes);
-
-  const restaurants = restaurantsFilteredByDishesTypes.filter(item => {
-      const { coordinates } = item.restaurants[0].location;
-      
-      const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
-        latitude: coordinates[0],
-        longitude: coordinates[1],
-      });
-
-      const isNear = (distanceBetweenCoordinates <= maxDistance * 1000);
-
-      return isNear;
-    }).map(item => ({
-      id: item.restaurants[0]._id,
-      name: item.restaurants[0].name,
-      imageURL: item.restaurants[0].imageURL,
-      address: item.restaurants[0].location.address,
-      stars: item.restaurants[0].stars,
-    }));
-
+  const restaurantsParsed = restaurantsFilteredByDishesTypes.map(item => item.restaurants[0]);  
+  const restaurants = _filterRestaurantsBasedDistance(restaurantsParsed, maxDistance, userLocation);  
+  
   return restaurants;
 }
 
@@ -239,7 +248,7 @@ exports.delete = async (req, res, next) => {
 
 exports.filter = async (req, res, next) => {
   try {
-    const { dishesTypes, page, maxDistance } = req.query;
+    const { dishesTypes, maxDistance } = req.query;
 
     const userLocation = {
       latitude: parseFloat(req.headers.userlatitude),
@@ -248,8 +257,8 @@ exports.filter = async (req, res, next) => {
 
     const restaurants =
       dishesTypes === 'all'
-      ? await _getAllRestaurants(page)
-      : await _getFilteredRestaurants(dishesTypes, userLocation, parseFloat(maxDistance));
+      ? await _getAllRestaurants(maxDistance, userLocation)
+      : await _getFilteredRestaurants(dishesTypes, maxDistance, userLocation);
 
     return res.status(200).json({
       restaurants,

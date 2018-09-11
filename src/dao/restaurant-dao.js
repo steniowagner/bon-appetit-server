@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const RestaurantModel = require('../models/Restaurant');
 const Restaurant = mongoose.model('Restaurant');
 
-const MAX_ITEMS_PER_PAGE = 10;
+const MAX_ITEMS_PER_PAGE = 5;
 
 exports.create = async (restaurantsData) => {
   try {
@@ -15,11 +15,9 @@ exports.create = async (restaurantsData) => {
   }
 };
 
-exports.readAll = async (paginationIndex) => {
+exports.readAll = async () => {
   try {
     return await Restaurant.find({}, { '__v': 0 })
-      .skip(MAX_ITEMS_PER_PAGE * paginationIndex)
-      .limit(MAX_ITEMS_PER_PAGE);
   } catch (err) {
     throw err;
   }
