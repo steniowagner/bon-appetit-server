@@ -20,7 +20,15 @@ exports.create = async (req, res, next) => {
 
 exports.readAll = async (req, res, next) => {
   try {
-    const events = await EventDAO.readAll();
+    const allEvents = await EventDAO.readAll();
+
+    const events = allEvents.map(event => ({
+      restaurantsParticipating: event.restaurantsParticipating,
+      description: event.description,
+      imageURL: event.imageURL,
+      title: event.title,
+      id: event._id,
+    }));
 
     return res.status(200).json({
       events,

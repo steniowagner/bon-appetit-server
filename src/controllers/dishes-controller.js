@@ -12,16 +12,11 @@ const _getRandomRestaurant = async (dishesTypes) => {
 
   const restaurantsShuffled = shuffleArray(allRestaurants);
 
-  const MAX_RANDOM_NUMBER = 2;
-  const MIN_RANDOM_NUMBER = 1;
-
-  const randomNumber = Math.floor(Math.random() * (MAX_RANDOM_NUMBER - MIN_RANDOM_NUMBER + 1)) + MIN_RANDOM_NUMBER;
-
   const restaurant = {
     closeAt: restaurantsShuffled[0].operatingHours.close,
     name: restaurantsShuffled[0].name,
     id: restaurantsShuffled[0].id,
-    isOpen: (randomNumber % 2 === 0),
+    isOpen: restaurantsShuffled[0].isOpen,
   };
 
   return restaurant;

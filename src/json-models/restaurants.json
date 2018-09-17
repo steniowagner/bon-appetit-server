@@ -11,10 +11,10 @@
       "open": "17:00",
       "close": "00:00"
     },
+    "isOpen": true,
     "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos",
     "dishesTypes": ["Dessert", "Salad"]
   },
-  
   {
     "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares.jpg",
     "name": "Lanche do Abençoado",
@@ -27,6 +27,7 @@
       "open": "17:00",
       "close": "00:00"
     },
+    "isOpen": false,
     "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos",
     "dishesTypes": ["Dessert", "Salad"]
   },
@@ -42,6 +43,7 @@
       "open": "17:00",
       "close": "00:00"
     },
+    "isOpen": true,
     "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos",
     "dishesTypes": ["Pizza", "Pasta"]
   }

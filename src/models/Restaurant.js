@@ -41,6 +41,10 @@ const RestaurantSchema = new mongoose.Schema({
       required: true,
     },
   },
+  isOpen: {
+    type: Boolean,
+    required: true,
+  },
   dishesTypes: [{
     type: String,
     enum: ['Barbecue', 'Dessert', 'Fast-Food', 'Homemade', 'Japanase', 'Pasta', 'Pizza', 'Salad', 'Seafood'],

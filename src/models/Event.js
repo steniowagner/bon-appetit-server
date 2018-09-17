@@ -18,7 +18,7 @@ const EventSchema = ({
     enum: ['Barbecue', 'Dessert', 'Fast-Food', 'Homemade', 'Japanase', 'Pasta', 'Pizza', 'Salad', 'Seafood'],
     required: true,
   }],
-  restaurantParticipating: {
+  restaurantsParticipating: {
     type: Number,
     required: true,
   },

@@ -140,9 +140,6 @@ exports.readById = async (req, res, next) => {
 };
 
 exports.readByDishesType = async (req, res, next) => {
-  const MAX_RANDOM_NUMBER = 2;
-  const MIN_RANDOM_NUMBER = 1;
-
   const { dishesType } = req.query;
 
   const userLocation = {
@@ -161,8 +158,6 @@ exports.readByDishesType = async (req, res, next) => {
         longitude: coordinates[1],
       });
 
-      const randomNumber = Math.floor(Math.random() * (MAX_RANDOM_NUMBER - MIN_RANDOM_NUMBER + 1)) + MIN_RANDOM_NUMBER;
-
       return {
         id: item.restaurants[0]._id,
         stars: item.restaurants[0].stars,
@@ -173,8 +168,8 @@ exports.readByDishesType = async (req, res, next) => {
           latitude: item.restaurants[0].location.coordinates[0],
           longitude: item.restaurants[0].location.coordinates[1],
         },
-        isOpen: (randomNumber % 2 === 0),
-        distance: distanceBetweenCoordinates.toFixed(2),
+        isOpen: item.restaurants[0].isOpen,
+        distance: distanceBetweenCoordinates.toFixed(1),
       };
     }).sort((first, second) => {
       return first.distance - second.distance;

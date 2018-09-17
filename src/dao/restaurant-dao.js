@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 const RestaurantModel = require('../models/Restaurant');
 const Restaurant = mongoose.model('Restaurant');
 
-const MAX_ITEMS_PER_PAGE = 5;
-
 exports.create = async (restaurantsData) => {
   try {
     restaurantsData.map(async data => {

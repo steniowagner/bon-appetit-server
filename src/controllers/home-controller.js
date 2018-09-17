@@ -9,7 +9,7 @@ const MAX_ITEMS = 12;
 const _getInYourCityEvents = async () => {
   const allEvents = await EventDAO.readAll();
 
-  const eventsShuffled = shuffleArray(allEvents).slice(0, MAX_ITEMS);
+  const eventsShuffled = shuffleArray(allEvents).slice(0, MAX_ITEMS / 2);
 
   const events = eventsShuffled.map(event => ({
     imageURL: event.imageURL,
@@ -27,17 +27,15 @@ const _getYouMightLikeDishes = (allDishes) => {
   const dishes = [];
 
   for (let i = 0; i < allDishes.length; i++) {
-    if (i % 2 !== 0) {
-      dishes.push({
-        imageURL: allDishes[i].imageURL,
-        price: allDishes[i].price,
-        title: allDishes[i].title,
-        stars: allDishes[i].stars,
-        reviews: allDishes[i].reviews,
-        id: allDishes[i]._id,
-        distance: randomDistance,
-      });
-    }
+    dishes.push({
+      imageURL: allDishes[i].imageURL,
+      price: allDishes[i].price.toFixed(2),
+      title: allDishes[i].title,
+      stars: allDishes[i].stars,
+      reviews: allDishes[i].reviews,
+      id: allDishes[i]._id,
+      distance: randomDistance,
+    });
   }
 
   return dishes;
@@ -47,15 +45,13 @@ const _getPopularDishes = (allDishes) => {
   const dishes = [];
 
   for (let i = 0; i < allDishes.length; i++) {
-    if (i % 2 === 0) {
-      dishes.push({
-        imageURL: allDishes[i].imageURL,
-        price: allDishes[i].price,
-        title: allDishes[i].title,
-        stars: allDishes[i].stars,
-        id: allDishes[i]._id,
-      });
-    }
+    dishes.push({
+      imageURL: allDishes[i].imageURL,
+      price: allDishes[i].price.toFixed(2),
+      title: allDishes[i].title,
+      stars: allDishes[i].stars,
+      id: allDishes[i]._id,
+    });
   }
 
   return dishes;
@@ -66,8 +62,8 @@ const _getDishesSectionsData = async () => {
 
   const dishesShuffled = shuffleArray(dishes);
 
-  const youMightLikeDishes = _getYouMightLikeDishes(dishesShuffled);
-  const popularDishes = _getPopularDishes(dishesShuffled);
+  const youMightLikeDishes = _getYouMightLikeDishes(shuffleArray(dishesShuffled));
+  const popularDishes = _getPopularDishes(shuffleArray(dishesShuffled));
 
   return {
     youMightLikeDishes,
