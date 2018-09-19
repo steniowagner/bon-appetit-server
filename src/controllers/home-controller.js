@@ -12,9 +12,11 @@ const _getInYourCityEvents = async () => {
   const eventsShuffled = shuffleArray(allEvents).slice(0, MAX_ITEMS / 2);
 
   const events = eventsShuffled.map(event => ({
+    restaurantsParticipating: event.restaurantsParticipating,
+    description: event.description,
+    dishesTypes: event.dishesTypes,
     imageURL: event.imageURL,
     title: event.title,
-    description: event.description,
     id: event._id,
   }));
 
@@ -28,11 +30,11 @@ const _getYouMightLikeDishes = (allDishes) => {
 
   for (let i = 0; i < allDishes.length; i++) {
     dishes.push({
-      imageURL: allDishes[i].imageURL,
       price: allDishes[i].price.toFixed(2),
+      imageURL: allDishes[i].imageURL,
+      reviews: allDishes[i].reviews,
       title: allDishes[i].title,
       stars: allDishes[i].stars,
-      reviews: allDishes[i].reviews,
       id: allDishes[i]._id,
       distance: randomDistance,
     });

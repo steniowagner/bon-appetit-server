@@ -1,6 +1,7 @@
 const debug = require('debug')('bon-appetit-api:event-controller');
 const mongoose = require('../db');
 const EventDAO = require('../dao/event-dao');
+const RestaurantDAO = require('../dao/restaurant-dao');
 
 exports.create = async (req, res, next) => {
   try {
@@ -24,6 +25,7 @@ exports.readAll = async (req, res, next) => {
 
     const events = allEvents.map(event => ({
       restaurantsParticipating: event.restaurantsParticipating,
+      dishesTypes: event.dishesTypes,
       description: event.description,
       imageURL: event.imageURL,
       title: event.title,
@@ -42,26 +44,23 @@ exports.readAll = async (req, res, next) => {
   }
 };
 
-exports.readById = async (req, res, next) => {
+exports.getRestaurants = async (req, res, next) => {
   try {
-    const { id } = req.params;
+    const { restaurantsParticipating, dishesTypes } = req.query;
 
-    if (!id) {
-      return res.status(400).json({
-        message: `The field 'id' mandatory`,
-      });
-    }
+    const dishesTypesArray = Array.isArray(dishesTypes) ? dishesTypes : [dishesTypes];
+    const restaurantsFilteredByDishesTypes =
+      await RestaurantDAO.filterBasedDishesTypes(dishesTypesArray);
+    const restaurants = restaurantsFilteredByDishesTypes.map(item => ({
+      address: item.restaurants[0].location.address,
+      imageURL: item.restaurants[0].imageURL,
+      stars: item.restaurants[0].stars,
+      name: item.restaurants[0].name,
+      id: item.restaurants[0]._id,
+    }));
 
-    const event = await EventDAO.readById(id);
-
-    if (event) {
-      return res.status(200).json({
-        event,
-      });
-    }
-
-    return res.status(404).json({
-      message: 'Event Not Found',
+    return res.status(200).json({
+      restaurants,
     });
   } catch (err) {
     debug(err);
