@@ -27,7 +27,8 @@ const _getRestaurantMenu = async (dishesTypes) => {
 
   dishesTypes.forEach(disheType => {
     menu.push({
-      [disheType]: _getDishesArray(dishes, disheType),
+      dishes: _getDishesArray(dishes, disheType),
+      type: [disheType],
     });
   });
 
@@ -117,18 +118,34 @@ exports.readById = async (req, res, next) => {
       });
     }
 
-    const restaurant = await RestaurantDAO.readById(id);
-    const menu = await _getRestaurantMenu(restaurant.dishesTypes);
+    const restaurantFromDB = await RestaurantDAO.readById(id);
+    
+    const userLocation = {
+      latitude: parseFloat(req.headers.userlatitude),
+      longitude: parseFloat(req.headers.userlongitude),
+    };
 
-    if (restaurant) {
-      return res.status(200).json({
-        restaurant,
-        menu,
-      });
-    }
+    const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
+      latitude: restaurantFromDB.location.coordinates[0],
+      longitude: restaurantFromDB.location.coordinates[1],
+    });
 
-    return res.status(404).json({
-      message: 'Restaurant Not Found',
+    const menu = await _getRestaurantMenu(restaurantFromDB.dishesTypes);
+
+    const restaurant = {
+      operatingHours: restaurantFromDB.operatingHours,
+      distance: distanceBetweenCoordinates.toFixed(1),
+      description: restaurantFromDB.description,
+      imageURL: restaurantFromDB.imageURL,
+      location: restaurantFromDB.location,
+      isOpen: restaurantFromDB.isOpen,
+      stars: restaurantFromDB.stars,
+      name: restaurantFromDB.name,
+    };
+
+    return res.status(200).json({
+      restaurant,
+      menu,
     });
   } catch (err) {
     debug (err);
