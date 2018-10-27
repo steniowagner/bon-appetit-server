@@ -2,11 +2,13 @@ const debug = require('debug')('bon-appetit-api:restaurant-controller');
 
 const RestaurantDAO = require('../dao/restaurant-dao');
 const DishesDAO = require('../dao/dishes-dao');
+const ReviewDAO = require('../dao/review-dao');
+
 
 const calculateDistanceCoordinates = require('../utils/calculate-distance-coordinates');
 const shuffleArray = require('../utils/shuffle-array');
 
-const _getDishesArray = (dishes, disheType) => {
+const _getDishesArray = (dishes, disheType, allReviews) => {
   const dishesFiltered = dishes.filter(dishe => dishe.type === disheType)
   const shuffledArray = shuffleArray(dishesFiltered);
   
@@ -15,19 +17,35 @@ const _getDishesArray = (dishes, disheType) => {
 
   const randomNumber = Math.floor(Math.random() * (MAX_VALUE_RANDOM_NUMBER - MIN_VALUE_RANDOM_NUMBER + 1)) + MIN_VALUE_RANDOM_NUMBER;
 
-  const dishesArray = shuffledArray.slice(0, randomNumber);
+  const shuffledDishesArray = shuffledArray.slice(0, randomNumber);
 
-  return dishesArray;
+  const disheArray = shuffledDishesArray.map(shuffledDishe => ({
+    userReviews: allReviews.slice(0, shuffledDishe.reviews),
+    description: shuffledDishe.description,
+    ingredients: shuffledDishe.ingredients,
+    imageURL: shuffledDishe.imageURL,
+    reviews: shuffledDishe.reviews,
+    stars: shuffledDishe.stars,
+    price: shuffledDishe.price,
+    title: shuffledDishe.title,
+    type: shuffledDishe.type,
+    id: shuffledDishe._id,
+  })); 
+
+  return disheArray;
 };
 
 const _getRestaurantMenu = async (dishesTypes) => {
   const dishes = await DishesDAO.readBasedDishesType(dishesTypes);
   
+  const allReviews = await ReviewDAO.readAll();
+  const reviewsShuffled = shuffleArray(allReviews);
+
   const menu = [];
 
   dishesTypes.forEach(disheType => {
     menu.push({
-      dishes: _getDishesArray(dishes, disheType),
+      dishes: _getDishesArray(dishes, disheType, reviewsShuffled),
       type: [disheType],
     });
   });
@@ -141,6 +159,7 @@ exports.readById = async (req, res, next) => {
       isOpen: restaurantFromDB.isOpen,
       stars: restaurantFromDB.stars,
       name: restaurantFromDB.name,
+      id: restaurantFromDB._id,
     };
 
     return res.status(200).json({

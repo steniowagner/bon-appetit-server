@@ -1,5 +1,5 @@
 const normalizePort = () => {
-  const envPort = process.env.PORT || 3000;
+  const envPort = process.env.PORT || 3001;
   const port = typeof envPort === 'string' ? parseInt(envPort, 10) : envPort;
 
   const isPortNotValid = !!port;

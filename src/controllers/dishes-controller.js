@@ -13,10 +13,11 @@ const _getRandomRestaurant = async (dishesTypes) => {
   const restaurantsShuffled = shuffleArray(allRestaurants);
 
   const restaurant = {
-    closeAt: restaurantsShuffled[0].operatingHours.close,
+    imageURL: restaurantsShuffled[0].imageURL,
+    address: restaurantsShuffled[0].address,
+    stars: restaurantsShuffled[0].stars,
     name: restaurantsShuffled[0].name,
     id: restaurantsShuffled[0].id,
-    isOpen: restaurantsShuffled[0].isOpen,
   };
 
   return restaurant;
@@ -49,7 +50,7 @@ exports.create = async (req, res, next) => {
 exports.readAll = async (req, res, next) => {
   try {
     const dishes = await DishesDAO.readAll();
-    
+
     return res.status(200).json({
       dishes,
     });
@@ -79,20 +80,20 @@ exports.readById = async (req, res, next) => {
       const reviews = await _getRandomReviews(dishe.reviews);
 
       return res.status(200).json({
-        dishe,
         restaurant,
         reviews,
+        dishe,
       });
     }
 
     return res.status(404).json({
-      message: 'Dishe Not Found',
+      message: 'Dish Not Found',
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Read Dishe.',
+      message: 'Error when trying to Read Dish.',
     });
   }
 };

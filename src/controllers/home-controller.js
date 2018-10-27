@@ -24,8 +24,6 @@ const _getInYourCityEvents = async () => {
 };
 
 const _getYouMightLikeDishes = (allDishes) => {
-  const randomDistance = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-
   const dishes = [];
 
   for (let i = 0; i < allDishes.length; i++) {
@@ -36,7 +34,6 @@ const _getYouMightLikeDishes = (allDishes) => {
       title: allDishes[i].title,
       stars: allDishes[i].stars,
       id: allDishes[i]._id,
-      distance: randomDistance,
     });
   }
 
