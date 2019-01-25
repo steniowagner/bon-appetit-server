@@ -1,23 +1,30 @@
-const mongoose = require('../db');
+const mongoose = require("../db");
 
-const ReviewSchema = ({
+const ReviewSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: true
   },
   profileImageURL: {
     type: String,
-    required: true,
+    required: true
   },
   review: {
     type: String,
-    required: true,
+    required: true
   },
   stars: {
     type: Number,
     required: false,
-    default: 0,
+    default: 0
   }
 });
 
-module.exports = mongoose.model('Review', ReviewSchema);
+ReviewSchema.set("toJSON", {
+  transform: function(doc, returned, options) {
+    returned.id = returned._id;
+    delete returned._id;
+  }
+});
+
+module.exports = mongoose.model("Review", ReviewSchema);

@@ -1,10 +1,19 @@
-const mongoose = require('mongoose');
-const ReviewModel = require('../models/Review');
-const Review = mongoose.model('Review');
+const mongoose = require("mongoose");
+const ReviewModel = require("../models/Review");
+const Review = mongoose.model("Review");
 
-exports.create = async (reviewData) => {
+exports.create = async data => {
   try {
-    reviewData.map(async data => {
+    const review = new Review(data);
+    return await review.save();
+  } catch (err) {
+    throw err;
+  }
+};
+
+exports.createInBatch = async reviews => {
+  try {
+    await reviews.map(async data => {
       const review = new Review(data);
       await review.save();
     });
@@ -15,15 +24,15 @@ exports.create = async (reviewData) => {
 
 exports.readAll = async () => {
   try {
-    return await Review.find({}, { '__v': 0 });
+    return await Review.find({});
   } catch (err) {
     throw err;
   }
 };
 
-exports.readById = async (id) => {
+exports.readById = async id => {
   try {
-    return await Review.findById(id, { '__v': 0 });
+    return await Review.findById(id);
   } catch (err) {
     throw err;
   }
@@ -31,13 +40,13 @@ exports.readById = async (id) => {
 
 exports.update = async (id, data) => {
   try {
-    return await Review.findByIdAndUpdate(id, data, { new: true });
+    return await Review.findByIdAndUpdate(id, { $set: data }, { new: true });
   } catch (err) {
     throw err;
   }
 };
 
-exports.delete = async (id) => {
+exports.delete = async id => {
   try {
     return await Review.findByIdAndRemove(id);
   } catch (err) {
