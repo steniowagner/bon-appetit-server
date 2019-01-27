@@ -1,7 +1,16 @@
 [
   {
     "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/pasta-event.jpg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/pasta-event-thumbnail.jpg",
     "title": "Pasta Festival",
+    "description": "An Amazing event with most extensive variety of the best of Italian cuisine!",
+    "dishesTypes": ["Pasta", "Pizza"],
+    "restaurantsParticipating": 12
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/pasta-event.jpg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/pasta-event-thumbnail.jpg",
+    "title": "PUTAIRAAA",
     "description": "An Amazing event with most extensive variety of the best of Italian cuisine!",
     "dishesTypes": ["Pasta", "Pizza"],
     "restaurantsParticipating": 12

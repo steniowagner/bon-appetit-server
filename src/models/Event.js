@@ -1,27 +1,50 @@
-const mongoose = require('../db');
+const mongoose = require("../db");
 
-const EventSchema = ({
+const EventSchema = new mongoose.Schema({
   imageURL: {
     type: String,
-    required: true,
+    required: true
+  },
+  thumbnailImageURL: {
+    type: String,
+    required: true
   },
   title: {
     type: String,
-    required: true,
+    required: true
   },
   description: {
     type: String,
-    required: true,
+    required: true
   },
-  dishesTypes: [{
-    type: String,
-    enum: ['Barbecue', 'Dessert', 'Fast-Food', 'Homemade', 'Japanase', 'Pasta', 'Pizza', 'Salad', 'Seafood'],
-    required: true,
-  }],
+  dishesTypes: [
+    {
+      type: String,
+      enum: [
+        "Barbecue",
+        "Dessert",
+        "Fast-Food",
+        "Homemade",
+        "Japanase",
+        "Pasta",
+        "Pizza",
+        "Salad",
+        "Seafood"
+      ],
+      required: true
+    }
+  ],
   restaurantsParticipating: {
     type: Number,
-    required: true,
-  },
+    required: true
+  }
 });
 
-module.exports = mongoose.model('Event', EventSchema);
+EventSchema.set("toJSON", {
+  transform: function(doc, returned, options) {
+    returned.id = returned._id;
+    delete returned._id;
+  }
+});
+
+module.exports = mongoose.model("Event", EventSchema);

@@ -1,13 +1,23 @@
-const mongoose = require('mongoose');
-const EventModel = require('../models/Event');
-const Event = mongoose.model('Event');
+const mongoose = require("mongoose");
 
-exports.create = async (eventData) => {
+const EventModel = require("../models/Event");
+const Event = mongoose.model("Event");
+
+exports.create = async data => {
   try {
-    eventData.map(async data => {
+    const event = new Event(data);
+    return await event.save();
+  } catch (err) {
+    throw err;
+  }
+};
+
+exports.createInBatch = async events => {
+  try {
+    await events.map(async data => {
       const event = new Event(data);
       await event.save();
-    });    
+    });
   } catch (err) {
     throw err;
   }
@@ -15,15 +25,15 @@ exports.create = async (eventData) => {
 
 exports.readAll = async () => {
   try {
-    return await Event.find({}, { '__v': 0 });
+    return await Event.find({});
   } catch (err) {
     throw err;
   }
 };
 
-exports.readById = async (id) => {
+exports.readById = async id => {
   try {
-    return await Event.findById(id, { '__v': 0 });
+    return await Event.findById(id);
   } catch (err) {
     throw err;
   }
@@ -31,13 +41,13 @@ exports.readById = async (id) => {
 
 exports.update = async (id, data) => {
   try {
-    return await Event.findByIdAndUpdate(id, data, { new: true });
+    return await Event.findByIdAndUpdate(id, { $set: data }, { new: true });
   } catch (err) {
     throw err;
   }
 };
 
-exports.delete = async (id) => {
+exports.delete = async id => {
   try {
     return await Event.findByIdAndRemove(id);
   } catch (err) {
