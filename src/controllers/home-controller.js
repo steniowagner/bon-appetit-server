@@ -1,5 +1,5 @@
 const EventDAO = require("../dao/event-dao");
-const DishesDAO = require("../dao/dishes-dao");
+const DishesDAO = require("../dao/dish-dao");
 
 const getUserLocation = require("../utils/get-user-location");
 const shuffleArray = require("../utils/shuffle-array");

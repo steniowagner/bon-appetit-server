@@ -1,42 +1,51 @@
 const debug = require("debug")("bon-appetit-api:dishes-controller");
 const mongoose = require("../db");
 
-const DishesDAO = require("../dao/dishes-dao");
 const RestaurantDAO = require("../dao/restaurant-dao");
 const ReviewDAO = require("../dao/review-dao");
+const DishDAO = require("../dao/dish-dao");
 
 const shuffleArray = require("../utils/shuffle-array");
 
 const _getRandomRestaurant = async dishesTypes => {
   const allRestaurants = await RestaurantDAO.readByDishType(dishesTypes);
 
-  const restaurantsShuffled = shuffleArray(allRestaurants);
-
-  const restaurant = {
-    imageURL: restaurantsShuffled[0].imageURL,
-    address: restaurantsShuffled[0].address,
-    stars: restaurantsShuffled[0].stars,
-    name: restaurantsShuffled[0].name,
-    id: restaurantsShuffled[0].id
-  };
+  const restaurant = shuffleArray(allRestaurants)[0];
 
   return restaurant;
 };
 
-const _getRandomReviews = async numberReviews => {
+const _getRandomReviews = async numberOfReviews => {
   const allReviews = await ReviewDAO.readAll();
 
   const reviewsShuffled = shuffleArray(allReviews);
 
-  return reviewsShuffled.slice(0, numberReviews);
+  return reviewsShuffled.slice(0, numberOfReviews);
 };
 
 exports.create = async (req, res, next) => {
   try {
-    await DishesDAO.create(req.body);
+    const { id } = await DishDAO.create(req.body);
 
     return res.status(201).json({
-      message: "Dishe Created with Success!"
+      message: "Dish Created with Success!",
+      id
+    });
+  } catch (err) {
+    debug(err);
+
+    return res.status(500).send({
+      message: "Error when trying to Create Dish."
+    });
+  }
+};
+
+exports.createInBatch = async (req, res, next) => {
+  try {
+    await DishDAO.createInBatch(req.body);
+
+    return res.status(201).json({
+      message: "Dishes Created with Success!"
     });
   } catch (err) {
     debug(err);
@@ -49,7 +58,7 @@ exports.create = async (req, res, next) => {
 
 exports.readAll = async (req, res, next) => {
   try {
-    const dishes = await DishesDAO.readAll();
+    const dishes = await DishDAO.readAll();
 
     return res.status(200).json({
       dishes
@@ -69,25 +78,25 @@ exports.readById = async (req, res, next) => {
 
     if (!id) {
       return res.status(400).json({
-        message: `The field 'id' mandatory.`
+        message: "The field id is required."
       });
     }
 
-    const dishe = await DishesDAO.readById(id);
+    const dish = await DishDAO.readById(id);
 
-    if (dishe) {
-      const restaurant = await _getRandomRestaurant(dishe.type);
-      const reviews = await _getRandomReviews(dishe.reviews);
-
-      return res.status(200).json({
-        restaurant,
-        reviews,
-        dishe
+    if (!dish) {
+      return res.status(404).json({
+        message: "Dish Not Found"
       });
     }
 
-    return res.status(404).json({
-      message: "Dish Not Found"
+    const restaurant = await _getRandomRestaurant(dish.type);
+    const reviews = await _getRandomReviews(dish.reviews);
+
+    return res.status(200).json({
+      restaurant,
+      reviews,
+      dish
     });
   } catch (err) {
     debug(err);
@@ -102,16 +111,28 @@ exports.update = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const disheUpdated = await DishesDAO.update(id, { ...req.body });
+    if (!id) {
+      return res.status(400).json({
+        message: "The field id is required."
+      });
+    }
+
+    const dishUpdated = await DishDAO.update(id, { ...req.body });
+
+    if (!dishUpdated) {
+      return res.status(404).json({
+        message: "Dish Not Found"
+      });
+    }
 
     return res.status(200).json({
-      disheUpdated
+      dishUpdated
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: "Error when trying to Update Dishe."
+      message: "Error when trying to Update Dish."
     });
   }
 };
@@ -122,26 +143,26 @@ exports.delete = async (req, res, next) => {
 
     if (!id) {
       return res.status(400).json({
-        message: `The field 'id' is mandatory`
+        message: "The field id is required"
       });
     }
 
-    const disheDeleted = await DishesDAO.delete(id);
+    const dishDeleted = await DishDAO.delete(id);
 
-    if (disheDeleted) {
-      return res.status(200).json({
-        message: "Dishe Deleted with Success!"
+    if (!dishDeleted) {
+      return res.status(404).json({
+        message: "Dish Not Found"
       });
     }
 
-    return res.status(404).json({
-      message: "Dishe Not Found"
+    return res.status(200).json({
+      message: "Dish Deleted with Success!"
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: "Error when trying to Delete Dishe."
+      message: "Error when trying to Delete Dish."
     });
   }
 };

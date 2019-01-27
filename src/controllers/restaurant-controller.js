@@ -1,8 +1,8 @@
 const debug = require("debug")("bon-appetit-api:restaurant-controller");
 
 const RestaurantDAO = require("../dao/restaurant-dao");
-const DishesDAO = require("../dao/dishes-dao");
 const ReviewDAO = require("../dao/review-dao");
+const DishesDAO = require("../dao/dish-dao");
 
 const calculateDistanceCoordinates = require("../utils/calculate-distance-coordinates");
 const shuffleArray = require("../utils/shuffle-array");

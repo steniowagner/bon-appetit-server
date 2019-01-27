@@ -1,13 +1,22 @@
 const mongoose = require("mongoose");
 
-const DishesModel = require("../models/Dishes");
-const Dishes = mongoose.model("Dishes");
+const DishModel = require("../models/Dish");
+const Dish = mongoose.model("Dish");
 
-exports.create = async dishesData => {
+exports.create = async data => {
   try {
-    dishesData.map(async data => {
-      const dishes = new Dishes(data);
-      await dishes.save();
+    const dish = new Dish(data);
+    return await dish.save();
+  } catch (err) {
+    throw err;
+  }
+};
+
+exports.createInBatch = async dishes => {
+  try {
+    await dishes.map(async data => {
+      const dish = new Dish(data);
+      await dish.save();
     });
   } catch (err) {
     throw err;
@@ -16,7 +25,7 @@ exports.create = async dishesData => {
 
 exports.readAll = async () => {
   try {
-    return await Dishes.find({}, { __v: 0 });
+    return await Dish.find({});
   } catch (err) {
     throw err;
   }
@@ -24,7 +33,7 @@ exports.readAll = async () => {
 
 exports.readBasedDishesType = async dishesTypes => {
   try {
-    const dishesFilteredByType = await Dishes.find({
+    const dishesFilteredByType = await Dish.find({
       type: {
         $in: dishesTypes
       }
@@ -41,7 +50,7 @@ exports.readBasedDishesType = async dishesTypes => {
 
 exports.readById = async id => {
   try {
-    return await Dishes.findById(id, { __v: 0 });
+    return await Dish.findById(id);
   } catch (err) {
     throw err;
   }
@@ -49,7 +58,7 @@ exports.readById = async id => {
 
 exports.update = async (id, data) => {
   try {
-    return await Dishes.findByIdAndUpdate(id, data, { new: true });
+    return await Dish.findByIdAndUpdate(id, { $set: data }, { new: true });
   } catch (err) {
     throw err;
   }
@@ -57,7 +66,7 @@ exports.update = async (id, data) => {
 
 exports.delete = async id => {
   try {
-    return await Dishes.findByIdAndRemove(id);
+    return await Dish.findByIdAndRemove(id);
   } catch (err) {
     throw err;
   }

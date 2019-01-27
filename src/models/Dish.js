@@ -1,7 +1,11 @@
 const mongoose = require("../db");
 
-const DishesSchema = new mongoose.Schema({
+const DishSchema = new mongoose.Schema({
   imageURL: {
+    type: String,
+    required: true
+  },
+  thumbnailImageURL: {
     type: String,
     required: true
   },
@@ -46,11 +50,11 @@ const DishesSchema = new mongoose.Schema({
   }
 });
 
-DishesSchema.set("toJSON", {
+DishSchema.set("toJSON", {
   transform: function(doc, returned, options) {
     returned.id = returned._id;
     delete returned._id;
   }
 });
 
-module.exports = mongoose.model("Dishes", DishesSchema);
+module.exports = mongoose.model("Dish", DishSchema);

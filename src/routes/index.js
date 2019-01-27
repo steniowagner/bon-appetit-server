@@ -8,8 +8,8 @@ router.get("/", (req, res) => {
 });
 
 router.use("/review", require("./review"));
-router.use("/dishes", require("./dishes"));
-router.use("/restaurants", require("./restaurant"));
+router.use("/dish", require("./dish"));
+router.use("/restaurant", require("./restaurant"));
 router.use("/event", require("./event"));
 router.use("/home", require("./home"));
 

@@ -1,34 +1,38 @@
 [
   {
-  "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/acai-banana-granola.jpg",
-  "title": "Açaí with Banana and Granola",
-  "description": "One of the most traditional desserts in the city, absolutely delicious and with a Tropical taste!",
-  "type": "Dessert",
-  "stars": 4.5,
-  "reviews": 15,
-  "price": 22,
-  "ingredients": [
-    "1 medium peeled and chopped banana-nanica",
-    "200 g of frozen açaí pulp",
-    "2 cups semi-skimmed milk",
-    "5 tablespoons granola",
-    "1 tablespoon honey",
-    "To decorate: dehydrated fruits"
-  ]
-}, {
-  "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/acai-banana-granola.jpg",
-  "title": "Pão e alho",
-  "description": "One of the most traditional desserts in the city, absolutely delicious and with a Tropical taste!",
-  "type": "Dessert",
-  "stars": 4.5,
-  "reviews": 15,
-  "price": 22,
-  "ingredients": [
-    "1 medium peeled and chopped banana-nanica",
-    "200 g of frozen açaí pulp",
-    "2 cups semi-skimmed milk",
-    "5 tablespoons granola",
-    "1 tablespoon honey",
-    "To decorate: dehydrated fruits"
-  ]
-}]
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/acai-banana-granola.jpg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/acai-banana-granola-thumbnail.jpg",
+    "title": "Açaí with Banana and Granola",
+    "description": "One of the most traditional desserts in the city, absolutely delicious and with a Tropical taste!",
+    "type": "Dessert",
+    "stars": 4.5,
+    "reviews": 15,
+    "price": 22,
+    "ingredients": [
+      "1 medium peeled and chopped banana-nanica",
+      "200 g of frozen açaí pulp",
+      "2 cups semi-skimmed milk",
+      "5 tablespoons granola",
+      "1 tablespoon honey",
+      "To decorate: dehydrated fruits"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/acai-banana-granola.jpg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/acai-banana-granola-thumbnail.jpg",
+    "title": "Pão e alho",
+    "description": "One of the most traditional desserts in the city, absolutely delicious and with a Tropical taste!",
+    "type": "Dessert",
+    "stars": 4.5,
+    "reviews": 15,
+    "price": 22,
+    "ingredients": [
+      "1 medium peeled and chopped banana-nanica",
+      "200 g of frozen açaí pulp",
+      "2 cups semi-skimmed milk",
+      "5 tablespoons granola",
+      "1 tablespoon honey",
+      "To decorate: dehydrated fruits"
+    ]
+  }
+]
