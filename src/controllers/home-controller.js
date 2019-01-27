@@ -1,86 +1,47 @@
-const EventDAO = require('../dao/event-dao');
-const DishesDAO = require('../dao/dishes-dao');
+const EventDAO = require("../dao/event-dao");
+const DishesDAO = require("../dao/dishes-dao");
 
-const getUserLocation = require('../utils/get-user-location');
-const shuffleArray = require('../utils/shuffle-array');
+const getUserLocation = require("../utils/get-user-location");
+const shuffleArray = require("../utils/shuffle-array");
 
-const MAX_ITEMS = 12;
+const MAX_ITEMS_PER_SECTION = 9;
 
 const _getInYourCityEvents = async () => {
   const allEvents = await EventDAO.readAll();
 
-  const eventsShuffled = shuffleArray(allEvents).slice(0, MAX_ITEMS / 2);
-
-  const events = eventsShuffled.map(event => ({
-    restaurantsParticipating: event.restaurantsParticipating,
-    description: event.description,
-    dishesTypes: event.dishesTypes,
-    imageURL: event.imageURL,
-    title: event.title,
-    id: event._id,
-  }));
+  const events = shuffleArray(allEvents).slice(0, MAX_ITEMS_PER_SECTION);
 
   return events;
 };
 
-const _getYouMightLikeDishes = (allDishes) => {
-  const dishes = [];
-
-  for (let i = 0; i < allDishes.length; i++) {
-    dishes.push({
-      price: allDishes[i].price.toFixed(2),
-      imageURL: allDishes[i].imageURL,
-      reviews: allDishes[i].reviews,
-      title: allDishes[i].title,
-      stars: allDishes[i].stars,
-      id: allDishes[i]._id,
-    });
-  }
-
-  return dishes;
-};
-
-const _getPopularDishes = (allDishes) => {
-  const dishes = [];
-
-  for (let i = 0; i < allDishes.length; i++) {
-    dishes.push({
-      imageURL: allDishes[i].imageURL,
-      price: allDishes[i].price.toFixed(2),
-      title: allDishes[i].title,
-      stars: allDishes[i].stars,
-      id: allDishes[i]._id,
-    });
-  }
-
-  return dishes;
-};
-
 const _getDishesSectionsData = async () => {
   const dishes = await DishesDAO.readAll();
-
   const dishesShuffled = shuffleArray(dishes);
 
-  const youMightLikeDishes = _getYouMightLikeDishes(shuffleArray(dishesShuffled));
-  const popularDishes = _getPopularDishes(shuffleArray(dishesShuffled));
+  const popularDishesShuffled = shuffleArray(dishesShuffled);
+  const popularDishes = popularDishesShuffled.slice(0, MAX_ITEMS_PER_SECTION);
+
+  const youMightLikeDishesShuffled = shuffleArray(dishesShuffled);
+  const youMightLikeDishes = youMightLikeDishesShuffled.slice(
+    0,
+    MAX_ITEMS_PER_SECTION
+  );
 
   return {
     youMightLikeDishes,
-    popularDishes,
+    popularDishes
   };
 };
 
-exports.getUserDashboard = async (req, res, next) => {
-  const userLocation = getUserLocation();
-
-  const inYourCityEvents = await _getInYourCityEvents();
-
+exports.getHomeData = async (req, res, next) => {
   const { popularDishes, youMightLikeDishes } = await _getDishesSectionsData();
+  const inYourCityEvents = await _getInYourCityEvents();
+  const userLocation = getUserLocation();
 
   return res.status(200).json({
     userLocation,
     inYourCityEvents,
     youMightLikeDishes,
-    popularDishes,
+    popularDishes
   });
 };

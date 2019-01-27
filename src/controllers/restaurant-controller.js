@@ -204,17 +204,20 @@ exports.readById = async (req, res, next) => {
     }
 
     const restaurantFromDB = await RestaurantDAO.readById(id);
-    const menu = await _getRestaurantMenu(restaurantFromDB.dishesTypes);
     const distanceBetweenCoordinates = _handleDistanceBetweenUserAndRestaurant(
       headers,
       restaurantFromDB
     );
 
+    const menu = await _getRestaurantMenu(restaurantFromDB.dishesTypes);
+    const isOpen = _getRandomNumber(1, 2) % 2 === 0;
+
     return res.status(200).json({
       restaurant: {
         ...restaurantFromDB._doc,
         id: restaurantFromDB._doc._id,
-        distance: distanceBetweenCoordinates
+        distance: distanceBetweenCoordinates,
+        isOpen
       },
       menu
     });
