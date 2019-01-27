@@ -1,57 +1,70 @@
-const mongoose = require('../db');
+const mongoose = require("../db");
 
 const RestaurantSchema = new mongoose.Schema({
   imageURL: {
     type: String,
-    required: true,
+    required: true
+  },
+  thumbnailImageURL: {
+    type: String,
+    required: true
   },
   name: {
     type: String,
-    required: true,
+    required: true
   },
   description: {
     type: String,
-    required: true,
+    required: true
   },
   stars: {
     type: Number,
-    required: true,
+    required: true
   },
   location: {
-    type: {
-      type: String,
-      default: 'Point',
-    },
     coordinates: {
       type: [Number],
-      default: [0, 0],
+      default: [0, 0]
     },
     address: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   operatingHours: {
     open: {
       type: String,
-      required: true,
+      required: true
     },
     close: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
-  isOpen: {
-    type: Boolean,
-    required: true,
-  },
-  dishesTypes: [{
-    type: String,
-    enum: ['Barbecue', 'Dessert', 'Fast-Food', 'Homemade', 'Japanase', 'Pasta', 'Pizza', 'Salad', 'Seafood'],
-    required: true,
-  }]
+  dishesTypes: [
+    {
+      type: String,
+      enum: [
+        "Barbecue",
+        "Dessert",
+        "Fast-Food",
+        "Homemade",
+        "Japanase",
+        "Pasta",
+        "Pizza",
+        "Salad",
+        "Seafood"
+      ],
+      required: true
+    }
+  ]
 });
 
-RestaurantSchema.index({ location: '2dsphere' });
+RestaurantSchema.set("toJSON", {
+  transform: function(doc, returned, options) {
+    returned.id = returned._id;
+    delete returned._id;
+  }
+});
 
-module.exports = mongoose.model('Restaurant', RestaurantSchema);
+module.exports = mongoose.model("Restaurant", RestaurantSchema);

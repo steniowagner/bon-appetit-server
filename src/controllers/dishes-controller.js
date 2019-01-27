@@ -1,14 +1,14 @@
-const debug = require('debug')('bon-appetit-api:dishes-controller');
-const mongoose = require('../db');
+const debug = require("debug")("bon-appetit-api:dishes-controller");
+const mongoose = require("../db");
 
-const DishesDAO = require('../dao/dishes-dao');
-const RestaurantDAO = require('../dao/restaurant-dao');
-const ReviewDAO = require('../dao/review-dao');
+const DishesDAO = require("../dao/dishes-dao");
+const RestaurantDAO = require("../dao/restaurant-dao");
+const ReviewDAO = require("../dao/review-dao");
 
-const shuffleArray = require('../utils/shuffle-array');
+const shuffleArray = require("../utils/shuffle-array");
 
-const _getRandomRestaurant = async (dishesTypes) => {
-  const allRestaurants = await RestaurantDAO.readByDisheType(dishesTypes);
+const _getRandomRestaurant = async dishesTypes => {
+  const allRestaurants = await RestaurantDAO.readByDishType(dishesTypes);
 
   const restaurantsShuffled = shuffleArray(allRestaurants);
 
@@ -17,13 +17,13 @@ const _getRandomRestaurant = async (dishesTypes) => {
     address: restaurantsShuffled[0].address,
     stars: restaurantsShuffled[0].stars,
     name: restaurantsShuffled[0].name,
-    id: restaurantsShuffled[0].id,
+    id: restaurantsShuffled[0].id
   };
 
   return restaurant;
 };
 
-const _getRandomReviews = async (numberReviews) => {
+const _getRandomReviews = async numberReviews => {
   const allReviews = await ReviewDAO.readAll();
 
   const reviewsShuffled = shuffleArray(allReviews);
@@ -36,13 +36,13 @@ exports.create = async (req, res, next) => {
     await DishesDAO.create(req.body);
 
     return res.status(201).json({
-      message: 'Dishe Created with Success!',
+      message: "Dishe Created with Success!"
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).send({
-      message: 'Error when trying to Create Dishes.',
+      message: "Error when trying to Create Dishes."
     });
   }
 };
@@ -52,13 +52,13 @@ exports.readAll = async (req, res, next) => {
     const dishes = await DishesDAO.readAll();
 
     return res.status(200).json({
-      dishes,
+      dishes
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).send({
-      message: 'Error when trying to Read All Dishes.',
+      message: "Error when trying to Read All Dishes."
     });
   }
 };
@@ -69,7 +69,7 @@ exports.readById = async (req, res, next) => {
 
     if (!id) {
       return res.status(400).json({
-        message: `The field 'id' mandatory.`,
+        message: `The field 'id' mandatory.`
       });
     }
 
@@ -82,18 +82,18 @@ exports.readById = async (req, res, next) => {
       return res.status(200).json({
         restaurant,
         reviews,
-        dishe,
+        dishe
       });
     }
 
     return res.status(404).json({
-      message: 'Dish Not Found',
+      message: "Dish Not Found"
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Read Dish.',
+      message: "Error when trying to Read Dish."
     });
   }
 };
@@ -105,13 +105,13 @@ exports.update = async (req, res, next) => {
     const disheUpdated = await DishesDAO.update(id, { ...req.body });
 
     return res.status(200).json({
-      disheUpdated,
+      disheUpdated
     });
   } catch (err) {
-    debug (err);
+    debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Update Dishe.',
+      message: "Error when trying to Update Dishe."
     });
   }
 };
@@ -122,7 +122,7 @@ exports.delete = async (req, res, next) => {
 
     if (!id) {
       return res.status(400).json({
-        message: `The field 'id' is mandatory`,
+        message: `The field 'id' is mandatory`
       });
     }
 
@@ -130,18 +130,18 @@ exports.delete = async (req, res, next) => {
 
     if (disheDeleted) {
       return res.status(200).json({
-        message: 'Dishe Deleted with Success!',
+        message: "Dishe Deleted with Success!"
       });
     }
 
     return res.status(404).json({
-      message: 'Dishe Not Found',
+      message: "Dishe Not Found"
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Delete Dishe.',
+      message: "Error when trying to Delete Dishe."
     });
   }
 };

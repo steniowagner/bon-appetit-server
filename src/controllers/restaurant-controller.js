@@ -1,111 +1,177 @@
-const debug = require('debug')('bon-appetit-api:restaurant-controller');
+const debug = require("debug")("bon-appetit-api:restaurant-controller");
 
-const RestaurantDAO = require('../dao/restaurant-dao');
-const DishesDAO = require('../dao/dishes-dao');
-const ReviewDAO = require('../dao/review-dao');
+const RestaurantDAO = require("../dao/restaurant-dao");
+const DishesDAO = require("../dao/dishes-dao");
+const ReviewDAO = require("../dao/review-dao");
 
+const calculateDistanceCoordinates = require("../utils/calculate-distance-coordinates");
+const shuffleArray = require("../utils/shuffle-array");
 
-const calculateDistanceCoordinates = require('../utils/calculate-distance-coordinates');
-const shuffleArray = require('../utils/shuffle-array');
+const _getRandomNumber = (minValue, maxValue) => {
+  const randomNumber =
+    Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
 
-const _getDishesArray = (dishes, disheType, allReviews) => {
-  const dishesFiltered = dishes.filter(dishe => dishe.type === disheType)
-  const shuffledArray = shuffleArray(dishesFiltered);
-  
-  const MAX_VALUE_RANDOM_NUMBER = dishes.length;
-  const MIN_VALUE_RANDOM_NUMBER = 1;
-
-  const randomNumber = Math.floor(Math.random() * (MAX_VALUE_RANDOM_NUMBER - MIN_VALUE_RANDOM_NUMBER + 1)) + MIN_VALUE_RANDOM_NUMBER;
-
-  const shuffledDishesArray = shuffledArray.slice(0, randomNumber);
-
-  const disheArray = shuffledDishesArray.map(shuffledDishe => ({
-    userReviews: allReviews.slice(0, shuffledDishe.reviews),
-    description: shuffledDishe.description,
-    ingredients: shuffledDishe.ingredients,
-    imageURL: shuffledDishe.imageURL,
-    reviews: shuffledDishe.reviews,
-    stars: shuffledDishe.stars,
-    price: shuffledDishe.price,
-    title: shuffledDishe.title,
-    type: shuffledDishe.type,
-    id: shuffledDishe._id,
-  })); 
-
-  return disheArray;
+  return randomNumber;
 };
 
-const _getRestaurantMenu = async (dishesTypes) => {
+const _getDishReviews = allReviews => {
+  const numberOfReviews = _getRandomNumber(1, allReviews.length);
+  const shuffledReviews = shuffleArray(allReviews);
+
+  return shuffledReviews.slice(0, numberOfReviews);
+};
+
+const _getDishesArray = (allReviews, allDishes, dishType) => {
+  const dishesFilteredByType = allDishes.filter(
+    dishe => dishe.type === dishType
+  );
+  const shuffledDishes = shuffleArray(dishesFilteredByType);
+  const numberOfDishes = _getRandomNumber(1, allDishes.length);
+  const dishes = shuffledDishes.slice(0, numberOfDishes);
+
+  const dishesArray = dishes.map(dish => {
+    const userReviews = _getDishReviews(allReviews);
+    return {
+      ...dish,
+      userReviews
+    };
+  });
+
+  return dishesArray;
+};
+
+const _getRestaurantMenu = async dishesTypes => {
   const dishes = await DishesDAO.readBasedDishesType(dishesTypes);
-  
   const allReviews = await ReviewDAO.readAll();
-  const reviewsShuffled = shuffleArray(allReviews);
 
   const menu = [];
 
-  dishesTypes.forEach(disheType => {
+  dishesTypes.forEach(dishType => {
+    const menuDishes = _getDishesArray(allReviews, dishes, dishType);
+
     menu.push({
-      dishes: _getDishesArray(dishes, disheType, reviewsShuffled),
-      type: [disheType],
+      type: dishType,
+      dishes: menuDishes
     });
   });
 
   return menu;
 };
 
-const _filterRestaurantsBasedDistance = (restaurantsDataset, maxDistance, userLocation) => {
-  const restaurants = restaurantsDataset.filter(restaurant => {
+const _filterRestaurantsBasedDistance = (
+  restaurants,
+  maxDistance,
+  userLocation
+) => {
+  const nearRestaurants = restaurants.filter(restaurant => {
     const { coordinates } = restaurant.location;
 
-    const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
-      latitude: coordinates[0],
-      longitude: coordinates[1],
-    });
+    const distanceBetweenCoordinates = calculateDistanceCoordinates(
+      userLocation,
+      {
+        latitude: coordinates[0],
+        longitude: coordinates[1]
+      }
+    );
 
-    const isInsideSearchRadius = (distanceBetweenCoordinates <= maxDistance);
+    const isInsideSearchRadius = distanceBetweenCoordinates <= maxDistance;
 
     return isInsideSearchRadius;
-  }).map(restaurant => ({
-    id: restaurant._id,
-    name: restaurant.name,
-    imageURL: restaurant.imageURL,
-    address: restaurant.location.address,
-    stars: restaurant.stars,
-  }));
+  });
 
-  return restaurants;
+  return nearRestaurants;
 };
 
-const _getAllRestaurants = async (maxDistance, userLocation) => {
+const _getAllNearestRestaurants = async (maxDistance, userLocation) => {
   const allRestaurants = await RestaurantDAO.readAll();
 
-  const restaurants = _filterRestaurantsBasedDistance(allRestaurants, maxDistance, userLocation);
+  const restaurants = _filterRestaurantsBasedDistance(
+    allRestaurants,
+    maxDistance,
+    userLocation
+  );
 
   return restaurants;
 };
 
-const _getFilteredRestaurants = async (dishesTypes, maxDistance, userLocation) => {
-  const dishes = (Array.isArray(dishesTypes) ? dishesTypes : [dishesTypes]);
-  
-  const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes(dishes);
-  const restaurantsParsed = restaurantsFilteredByDishesTypes.map(item => item.restaurants[0]);  
-  const restaurants = _filterRestaurantsBasedDistance(restaurantsParsed, maxDistance, userLocation);  
-  
+const _filteredRestaurantsBasedDishType = async (
+  dishesTypes,
+  maxDistance,
+  userLocation
+) => {
+  const dishes = Array.isArray(dishesTypes) ? dishesTypes : [dishesTypes];
+
+  const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes(
+    dishes
+  );
+
+  const restaurantsParsed = restaurantsFilteredByDishesTypes.map(item => ({
+    ...item.restaurants[0],
+    id: item.restaurants[0]._id
+  }));
+
+  const restaurants = _filterRestaurantsBasedDistance(
+    restaurantsParsed,
+    maxDistance,
+    userLocation
+  );
+
   return restaurants;
-}
+};
+
+const _handleDistanceBetweenUserAndRestaurant = (
+  rawUserLocation,
+  restaurant
+) => {
+  const { userlatitude, userlongitude } = rawUserLocation;
+
+  const userLocation = {
+    latitude: parseFloat(userlatitude),
+    longitude: parseFloat(userlongitude)
+  };
+
+  const restaurantLocation = {
+    latitude: restaurant.location.coordinates[0],
+    longitude: restaurant.location.coordinates[1]
+  };
+
+  const distance = calculateDistanceCoordinates(
+    userLocation,
+    restaurantLocation
+  );
+
+  return distance.toFixed(1);
+};
 
 exports.create = async (req, res, next) => {
   try {
-    await RestaurantDAO.create(req.body);
+    const { id } = await RestaurantDAO.create(req.body);
 
     return res.status(201).json({
-      message: 'Restaurants created with Success!',
+      message: "Restaurant created with Success!",
+      id
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Create Restaurant.',
+      message: "Error when trying to Create Restaurant."
+    });
+  }
+};
+
+exports.createInBatch = async (req, res, next) => {
+  try {
+    await RestaurantDAO.createInBatch(req.body);
+
+    return res.status(201).json({
+      message: "Restaurant created with Success!"
+    });
+  } catch (err) {
+    debug(err);
+
+    return res.status(500).json({
+      message: "Error when trying to Create Restaurants."
     });
   }
 };
@@ -115,110 +181,48 @@ exports.readAll = async (req, res, next) => {
     const restaurants = await RestaurantDAO.readAll();
 
     return res.status(200).json({
-      restaurants,
+      restaurants
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Read All Restaurant.',
+      message: "Error when trying to Read All Restaurant."
     });
   }
 };
 
 exports.readById = async (req, res, next) => {
   try {
-    const { id } = req.params;
+    const { headers, params } = req;
+    const { id } = params;
 
-    if (!id) {
+    if (!headers.userlatitude || !headers.userlongitude) {
       return res.status(400).json({
-        message: `The field 'id' mandatory.`,
+        message: "User Location is required."
       });
     }
 
     const restaurantFromDB = await RestaurantDAO.readById(id);
-    
-    const userLocation = {
-      latitude: parseFloat(req.headers.userlatitude),
-      longitude: parseFloat(req.headers.userlongitude),
-    };
-
-    const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
-      latitude: restaurantFromDB.location.coordinates[0],
-      longitude: restaurantFromDB.location.coordinates[1],
-    });
-
     const menu = await _getRestaurantMenu(restaurantFromDB.dishesTypes);
-
-    const restaurant = {
-      operatingHours: restaurantFromDB.operatingHours,
-      distance: distanceBetweenCoordinates.toFixed(1),
-      description: restaurantFromDB.description,
-      imageURL: restaurantFromDB.imageURL,
-      location: restaurantFromDB.location,
-      isOpen: restaurantFromDB.isOpen,
-      stars: restaurantFromDB.stars,
-      name: restaurantFromDB.name,
-      id: restaurantFromDB._id,
-    };
+    const distanceBetweenCoordinates = _handleDistanceBetweenUserAndRestaurant(
+      headers,
+      restaurantFromDB
+    );
 
     return res.status(200).json({
-      restaurant,
-      menu,
-    });
-  } catch (err) {
-    debug (err);
-
-    return res.status(500).json({
-      message: 'Error when trying to Read Restaurant.',
-    });
-  }
-};
-
-exports.readByDishesType = async (req, res, next) => {
-  const { dishesType } = req.query;
-
-  const userLocation = {
-    latitude: parseFloat(req.headers.userlatitude),
-    longitude: parseFloat(req.headers.userlongitude),
-  };
-
-  try {
-    const restaurantsFilteredByDishesTypes = await RestaurantDAO.filterBasedDishesTypes([dishesType]);
-
-    const restaurants = restaurantsFilteredByDishesTypes.map(item => {
-      const { coordinates } = item.restaurants[0].location;
-      
-      const distanceBetweenCoordinates = calculateDistanceCoordinates(userLocation, {
-        latitude: coordinates[0],
-        longitude: coordinates[1],
-      });
-
-      return {
-        id: item.restaurants[0]._id,
-        stars: item.restaurants[0].stars,
-        description: item.restaurants[0].description,
-        name: item.restaurants[0].name,
-        imageURL: item.restaurants[0].imageURL,
-        location: {
-          latitude: item.restaurants[0].location.coordinates[0],
-          longitude: item.restaurants[0].location.coordinates[1],
-        },
-        isOpen: item.restaurants[0].isOpen,
-        distance: distanceBetweenCoordinates.toFixed(1),
-      };
-    }).sort((first, second) => {
-      return first.distance - second.distance;
-    });
-
-    return res.status(200).json({
-      restaurants,
+      restaurant: {
+        ...restaurantFromDB._doc,
+        id: restaurantFromDB._doc._id,
+        distance: distanceBetweenCoordinates
+      },
+      menu
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Read by Dishe Type.',
+      message: "Error when trying to Read Restaurant."
     });
   }
 };
@@ -226,29 +230,29 @@ exports.readByDishesType = async (req, res, next) => {
 exports.update = async (req, res, next) => {
   try {
     const { id } = req.params;
-    
+
     if (!id) {
       return res.status(400).json({
-        message: `The field 'id' mandatory.`,
+        message: `The field 'id' mandatory.`
       });
     }
 
-    const restaurantUpdated = await RestaurantDAO.update(id, { ...req.body });
+    const restaurant = await RestaurantDAO.update(id, { ...req.body });
 
-    if (restaurantUpdated) {
+    if (restaurant) {
       return res.status(200).json({
-        restaurantUpdated,
+        restaurant
       });
     }
 
     return res.status(404).json({
-      message: 'Restaurant Not Found',
+      message: "Restaurant Not Found"
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Update Restaurant.',
+      message: "Error when trying to Update Restaurant."
     });
   }
 };
@@ -261,44 +265,112 @@ exports.delete = async (req, res, next) => {
 
     if (restaurantDeleted) {
       return res.status(200).json({
-        message: 'Restaurant Deleted with Success!',
+        message: "Restaurant Deleted with Success!"
       });
     }
 
     return res.send(404).json({
-      message: 'Restaurant Not Found',
+      message: "Restaurant Not Found"
     });
   } catch (err) {
-    debug (err);
+    debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Delete Restaurant.',
+      message: "Error when trying to Delete Restaurant."
+    });
+  }
+};
+
+exports.getNearbyRestaurants = async (req, res, next) => {
+  try {
+    const { headers, query } = req;
+    const { dishesType } = query;
+
+    if (!headers.userlatitude || !headers.userlongitude) {
+      return res.status(400).json({
+        message: "User Location is required."
+      });
+    }
+
+    const restaurantsFilteredByDishTypes = await RestaurantDAO.filterBasedDishesTypes(
+      [dishesType]
+    );
+
+    const restaurants = restaurantsFilteredByDishTypes
+      .map(item => ({
+        ...item.restaurants[0],
+        id: item.restaurants[0]._id,
+        location: {
+          latitude: item.restaurants[0].location.coordinates[0],
+          longitude: item.restaurants[0].location.coordinates[1]
+        },
+        distance: _handleDistanceBetweenUserAndRestaurant(
+          headers,
+          item.restaurants[0]
+        )
+      }))
+      .sort((first, second) => {
+        return first.distance - second.distance;
+      });
+
+    return res.status(200).json({
+      restaurants
+    });
+  } catch (err) {
+    debug(err);
+
+    return res.status(500).json({
+      message: "Error when trying to Read by Dishe Type."
     });
   }
 };
 
 exports.filter = async (req, res, next) => {
   try {
-    const { dishesTypes, maxDistance } = req.query;
+    const { query, headers } = req;
+    const { dishesTypes, maxDistance } = query;
+    const { userlatitude, userlongitude } = headers;
+
+    if (!dishesTypes) {
+      return res.status(400).json({
+        message: "Dishes Types is required."
+      });
+    }
+
+    if (!maxDistance) {
+      return res.status(400).json({
+        message: "Max Distance is required."
+      });
+    }
+
+    if (!userlatitude || !userlongitude) {
+      return res.status(400).json({
+        message: "User Location is required."
+      });
+    }
 
     const userLocation = {
-      latitude: parseFloat(req.headers.userlatitude),
-      longitude: parseFloat(req.headers.userlongitude),
+      latitude: parseFloat(userlatitude),
+      longitude: parseFloat(userlongitude)
     };
 
     const restaurants =
-      dishesTypes === 'all'
-      ? await _getAllRestaurants(maxDistance, userLocation)
-      : await _getFilteredRestaurants(dishesTypes, maxDistance, userLocation);
+      dishesTypes === "all"
+        ? await _getAllNearestRestaurants(maxDistance, userLocation)
+        : await _filteredRestaurantsBasedDishType(
+            dishesTypes,
+            maxDistance,
+            userLocation
+          );
 
     return res.status(200).json({
-      restaurants,
+      restaurants
     });
   } catch (err) {
     debug(err);
 
     return res.status(500).json({
-      message: 'Error when trying to Filter Restaurants.',
+      message: "Error when trying to Filter Restaurants."
     });
   }
 };

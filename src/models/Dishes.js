@@ -1,39 +1,56 @@
-const mongoose = require('../db');
+const mongoose = require("../db");
 
-const DishesSchema = ({
+const DishesSchema = new mongoose.Schema({
   imageURL: {
     type: String,
-    required: true,
+    required: true
   },
   title: {
     type: String,
-    required: true,
+    required: true
   },
   description: {
     type: String,
-    required: true,
+    required: true
   },
   type: {
     type: String,
-    enum: ['Barbecue', 'Dessert', 'Fast-Food', 'Homemade', 'Japanase', 'Pasta', 'Pizza', 'Salad', 'Seafood'],
-    require: true,
+    enum: [
+      "Barbecue",
+      "Dessert",
+      "Fast-Food",
+      "Homemade",
+      "Japanase",
+      "Pasta",
+      "Pizza",
+      "Salad",
+      "Seafood"
+    ],
+    require: true
   },
   stars: {
     type: Number,
-    required: true,
+    required: true
   },
   reviews: {
     type: Number,
-    required: true,
+    required: true
   },
   price: {
     type: Number,
-    require: true,
+    require: true
   },
   ingredients: {
     type: [String],
-    require: true,
-  },
+    require: true
+  }
 });
 
-module.exports = mongoose.model('Dishes', DishesSchema);
+DishesSchema.set("toJSON", {
+  transform: function(doc, returned, options) {
+    returned.id = returned._id;
+    delete returned._id;
+  }
+});
+
+module.exports = mongoose.model("Dishes", DishesSchema);
