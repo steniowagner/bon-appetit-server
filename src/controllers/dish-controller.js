@@ -1,4 +1,3 @@
-const debug = require("debug")("bon-appetit-api:dishes-controller");
 const mongoose = require("../db");
 
 const RestaurantDAO = require("../dao/restaurant-dao");
@@ -28,14 +27,11 @@ exports.create = async (req, res, next) => {
     const { id } = await DishDAO.create(req.body);
 
     return res.status(201).json({
-      message: "Dish Created with Success!",
       id
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).send({
-      message: "Error when trying to Create Dish."
+      error
     });
   }
 };
@@ -44,14 +40,10 @@ exports.createInBatch = async (req, res, next) => {
   try {
     await DishDAO.createInBatch(req.body);
 
-    return res.status(201).json({
-      message: "Dishes Created with Success!"
-    });
-  } catch (err) {
-    debug(err);
-
+    return res.status(201);
+  } catch (error) {
     return res.status(500).send({
-      message: "Error when trying to Create Dishes."
+      error
     });
   }
 };
@@ -63,11 +55,9 @@ exports.readAll = async (req, res, next) => {
     return res.status(200).json({
       dishes
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).send({
-      message: "Error when trying to Read All Dishes."
+      error
     });
   }
 };
@@ -98,11 +88,9 @@ exports.readById = async (req, res, next) => {
       reviews,
       dish
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Read Dish."
+      error
     });
   }
 };
@@ -128,11 +116,9 @@ exports.update = async (req, res, next) => {
     return res.status(200).json({
       dishUpdated
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Update Dish."
+      error
     });
   }
 };
@@ -155,14 +141,10 @@ exports.delete = async (req, res, next) => {
       });
     }
 
-    return res.status(200).json({
-      message: "Dish Deleted with Success!"
-    });
-  } catch (err) {
-    debug(err);
-
+    return res.status(200);
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Delete Dish."
+      error
     });
   }
 };

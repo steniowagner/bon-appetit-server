@@ -1,4 +1,3 @@
-const debug = require("debug")("bon-appetit-api:review-controller");
 const ReviewDAO = require("../dao/review-dao");
 
 exports.create = async (req, res, next) => {
@@ -6,14 +5,11 @@ exports.create = async (req, res, next) => {
     const { id } = await ReviewDAO.create(req.body);
 
     return res.status(201).send({
-      message: "Review Created with Success!",
       id
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).send({
-      message: "Error when trying to Create Review."
+      error
     });
   }
 };
@@ -22,14 +18,10 @@ exports.createInBatch = async (req, res, next) => {
   try {
     await ReviewDAO.createInBatch(req.body);
 
-    return res.status(201).send({
-      message: "Reviews Created with Success!"
-    });
-  } catch (err) {
-    debug(err);
-
+    return res.status(201);
+  } catch (error) {
     return res.status(500).send({
-      message: "Error when trying to Create Reviews in batch."
+      error
     });
   }
 };
@@ -41,11 +33,9 @@ exports.readAll = async (req, res, next) => {
     return res.status(200).send({
       reviews
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).send({
-      message: "Error when trying to Read All Reviews."
+      error
     });
   }
 };
@@ -65,11 +55,9 @@ exports.readById = async (req, res, next) => {
     return res.status(404).send({
       message: "Review Not Found"
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).send({
-      message: "Error when trying to Read Review."
+      error
     });
   }
 };
@@ -89,11 +77,9 @@ exports.update = async (req, res, next) => {
     return res.status(404).send({
       message: "Review Not Found"
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).send({
-      message: "Error when trying to Update Review."
+      error
     });
   }
 };
@@ -105,19 +91,15 @@ exports.delete = async (req, res, next) => {
     const reviewDeleted = await ReviewDAO.delete(id);
 
     if (reviewDeleted) {
-      return res.status(200).send({
-        message: "Dishe Deleted with Success!"
-      });
+      return res.status(200);
     }
 
     return res.status(404).send({
       message: "Review Not Found"
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).send({
-      message: "Error when trying to Delete Review."
+      error
     });
   }
 };

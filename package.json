@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/bin/index.js",
   "scripts": {
-    "start": "node ./src/bin/www",
+    "start": "node ./src/bin",
     "dev": "NODE_ENV=development DEBUG=bon-appetit-api:* nodemon ./src/bin/index.js"
   },
   "repository": {
@@ -19,9 +19,12 @@
   "homepage": "https://github.com/steniowagner/bon-appetit-server#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "debug": "^3.1.0",
     "express": "^4.16.3",
-    "mongoose": "5.2.8",
+    "mongoose": "5.2.8"
+  },
+  "devDependencies": {
+    "debug": "^4.1.1",
+    "dotenv": "^6.2.0",
     "nodemon": "^1.18.4"
   }
 }

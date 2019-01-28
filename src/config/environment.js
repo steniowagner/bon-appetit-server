@@ -1,17 +1,8 @@
-const normalizePort = require('./port');
-
 const config = {
-  development: {
-    port: normalizePort(),
-    mongoURL: 'mongodb://localhost:27017/bon-appetit',
-  },
-
-  test: {
-    port: normalizePort(),
-    mongoURL: 'mongodb://localhost:27017/bon-appetit',
-  },
+  production: {
+    DATABASE_URL: process.env.DATABASE_URL,
+    PORT: process.env.PORT
+  }
 };
 
-const env = process.env.NODE_ENV;
-
-module.exports = config[env];
+module.exports = config[process.env.NODE_ENV];

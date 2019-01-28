@@ -1,4 +1,3 @@
-const debug = require("debug")("bon-appetit-api:event-controller");
 const mongoose = require("../db");
 
 const RestaurantDAO = require("../dao/restaurant-dao");
@@ -9,14 +8,11 @@ exports.create = async (req, res, next) => {
     const { id } = await EventDAO.create(req.body);
 
     return res.status(201).json({
-      message: "Event created with Success!",
       id
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Create Event."
+      error
     });
   }
 };
@@ -28,11 +24,9 @@ exports.createInBatch = async (req, res, next) => {
     return res.status(201).json({
       message: "Events created with Success!"
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Create Events."
+      error
     });
   }
 };
@@ -44,11 +38,9 @@ exports.readAll = async (req, res, next) => {
     return res.status(200).json({
       events
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Read All Events"
+      error
     });
   }
 };
@@ -86,11 +78,9 @@ exports.readById = async (req, res, next) => {
       restaurants,
       event
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Read Event"
+      error
     });
   }
 };
@@ -109,7 +99,6 @@ exports.update = async (req, res, nex) => {
 
     if (eventUpdated) {
       return res.status(200).json({
-        message: "Event updated with Success!",
         eventUpdated
       });
     }
@@ -118,10 +107,8 @@ exports.update = async (req, res, nex) => {
       message: "Event Not Found"
     });
   } catch (err) {
-    debug(err);
-
     return res.status(500).json({
-      message: "Error when trying to Update Event"
+      error
     });
   }
 };
@@ -139,19 +126,15 @@ exports.delete = async (req, res, next) => {
     const eventDeleted = await EventDAO.delete(id);
 
     if (eventDeleted) {
-      return res.status(200).json({
-        message: "Event deleted with Success!"
-      });
+      return res.status(200);
     }
 
     return res.status(404).json({
       message: "Event Not Found"
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Delete Event"
+      error
     });
   }
 };

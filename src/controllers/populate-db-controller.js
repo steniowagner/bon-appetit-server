@@ -18,11 +18,9 @@ exports.populate = async (req, res, next) => {
     return res.status(201).json({
       message: "Database Filled and Ready to Use!"
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Populate Database."
+      error
     });
   }
 };
