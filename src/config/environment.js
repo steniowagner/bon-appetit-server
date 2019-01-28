@@ -1,17 +1,12 @@
-const normalizePort = require('./port');
+require("dotenv").config({
+  path: process.env.NODE_ENV === "development" ? ".env.development" : ""
+});
 
 const config = {
   development: {
-    port: normalizePort(),
-    mongoURL: 'mongodb://localhost:27017/bon-appetit',
-  },
-
-  test: {
-    port: normalizePort(),
-    mongoURL: 'mongodb://localhost:27017/bon-appetit',
-  },
+    mongoURL: process.env.DATABASE_URL,
+    port: process.env.PORT
+  }
 };
 
-const env = process.env.NODE_ENV;
-
-module.exports = config[env];
+module.exports = config[process.env.NODE_ENV];
