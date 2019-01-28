@@ -1,10 +1,10 @@
 const EventDAO = require("../dao/event-dao");
-const DishesDAO = require("../dao/dish-dao");
+const DishDAO = require("../dao/dish-dao");
 
 const getUserLocation = require("../utils/get-user-location");
 const shuffleArray = require("../utils/shuffle-array");
 
-const MAX_ITEMS_PER_SECTION = 9;
+const MAX_ITEMS_PER_SECTION = 10;
 
 const _getInYourCityEvents = async () => {
   const allEvents = await EventDAO.readAll();
@@ -15,7 +15,7 @@ const _getInYourCityEvents = async () => {
 };
 
 const _getDishesSectionsData = async () => {
-  const dishes = await DishesDAO.readAll();
+  const dishes = await DishDAO.readAll();
   const dishesShuffled = shuffleArray(dishes);
 
   const popularDishesShuffled = shuffleArray(dishesShuffled);
