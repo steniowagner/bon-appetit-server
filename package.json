@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/bin/index.js",
   "scripts": {
-    "start": "node ./src/bin",
+    "start": "node ./node_modules/.bin/pm2-runtime ./src/bin",
     "dev": "NODE_ENV=development DEBUG=bon-appetit-api:* nodemon ./src/bin/index.js"
   },
   "repository": {
@@ -20,7 +20,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "mongoose": "5.2.8"
+    "mongoose": "5.2.8",
+    "pm2": "^3.2.9"
   },
   "devDependencies": {
     "debug": "^4.1.1",
