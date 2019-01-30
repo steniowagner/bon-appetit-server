@@ -310,7 +310,8 @@ exports.getNearbyRestaurants = async (req, res, next) => {
         distance: _handleDistanceBetweenUserAndRestaurant(
           headers,
           item.restaurants[0]
-        )
+        ),
+        isOpen: _getRandomNumber(1, 2) % 2 === 0
       }))
       .sort((first, second) => {
         return first.distance - second.distance;
