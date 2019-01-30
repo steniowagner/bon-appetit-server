@@ -1,5 +1,3 @@
-const debug = require("debug")("bon-appetit-api:restaurant-controller");
-
 const RestaurantDAO = require("../dao/restaurant-dao");
 const ReviewDAO = require("../dao/review-dao");
 const DishesDAO = require("../dao/dish-dao");
@@ -151,11 +149,9 @@ exports.create = async (req, res, next) => {
       message: "Restaurant created with Success!",
       id
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Create Restaurant."
+      error
     });
   }
 };
@@ -167,11 +163,9 @@ exports.createInBatch = async (req, res, next) => {
     return res.status(201).json({
       message: "Restaurant created with Success!"
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Create Restaurants."
+      error
     });
   }
 };
@@ -183,11 +177,9 @@ exports.readAll = async (req, res, next) => {
     return res.status(200).json({
       restaurants
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Read All Restaurant."
+      error
     });
   }
 };
@@ -221,11 +213,9 @@ exports.readById = async (req, res, next) => {
       },
       menu
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Read Restaurant."
+      error
     });
   }
 };
@@ -251,11 +241,9 @@ exports.update = async (req, res, next) => {
     return res.status(404).json({
       message: "Restaurant Not Found"
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Update Restaurant."
+      error
     });
   }
 };
@@ -275,11 +263,9 @@ exports.delete = async (req, res, next) => {
     return res.send(404).json({
       message: "Restaurant Not Found"
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Delete Restaurant."
+      error
     });
   }
 };
@@ -320,11 +306,9 @@ exports.getNearbyRestaurants = async (req, res, next) => {
     return res.status(200).json({
       restaurants
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Read by Dishe Type."
+      error
     });
   }
 };
@@ -370,11 +354,9 @@ exports.filter = async (req, res, next) => {
     return res.status(200).json({
       restaurants
     });
-  } catch (err) {
-    debug(err);
-
+  } catch (error) {
     return res.status(500).json({
-      message: "Error when trying to Filter Restaurants."
+      error
     });
   }
 };
