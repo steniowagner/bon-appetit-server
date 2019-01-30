@@ -24,3 +24,30 @@ exports.populate = async (req, res, next) => {
     });
   }
 };
+
+const clearDataset = async daoInstance => {
+  try {
+    const dataset = await daoInstance.readAll();
+
+    await dataset.map(async data => await daoInstance.delete(data.id));
+  } catch (err) {
+    throw err;
+  }
+};
+
+exports.clear = async (req, res, next) => {
+  try {
+    await clearDataset(RestaurantDAO);
+    await clearDataset(ReviewDAO);
+    await clearDataset(DishDAO);
+    await clearDataset(EventDAO);
+
+    return res.status(201).json({
+      message: "Database Cleared!"
+    });
+  } catch (error) {
+    return res.status(500).json({
+      error
+    });
+  }
+};
