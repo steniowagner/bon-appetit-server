@@ -1,3 +1,5 @@
+const debug = require("debug")("bon-appetit-api:dishes-controller");
+
 const RestaurantDAO = require("../dao/restaurant-dao");
 const ReviewDAO = require("../dao/review-dao");
 const EventDAO = require("../dao/event-dao");
@@ -17,6 +19,35 @@ exports.populate = async (req, res, next) => {
 
     return res.status(201).json({
       message: "Database Filled and Ready to Use!"
+    });
+  } catch (err) {
+    debug(err);
+
+    return res.status(500).json({
+      message: "Error when trying to Populate Database."
+    });
+  }
+};
+
+const clearDataset = async daoInstance => {
+  try {
+    const dataset = await daoInstance.readAll();
+
+    await dataset.map(async data => await daoInstance.delete(data.id));
+  } catch (err) {
+    throw err;
+  }
+};
+
+exports.clear = async (req, res, next) => {
+  try {
+    await clearDataset(RestaurantDAO);
+    await clearDataset(ReviewDAO);
+    await clearDataset(DishDAO);
+    await clearDataset(EventDAO);
+
+    return res.status(201).json({
+      message: "Database Cleared!"
     });
   } catch (err) {
     debug(err);
