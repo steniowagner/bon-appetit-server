@@ -7,8 +7,8 @@ const DishDAO = require("../dao/dish-dao");
 
 const restaurants = require("../json-models/restaurants.json");
 const reviews = require("../json-models/reviews.json");
-const dishes = require("../json-models/dishes.json");
 const events = require("../json-models/events.json");
+const dishes = require("../json-models/dishes");
 
 exports.populate = async (req, res, next) => {
   try {

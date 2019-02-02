@@ -9,6 +9,10 @@ const DishSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  mediumImageURL: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true
@@ -24,7 +28,7 @@ const DishSchema = new mongoose.Schema({
       "Dessert",
       "Fast-Food",
       "Homemade",
-      "Japanase",
+      "Japanese",
       "Pasta",
       "Pizza",
       "Salad",

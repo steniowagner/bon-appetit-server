@@ -7,6 +7,8 @@ const DishDAO = require("../dao/dish-dao");
 
 const shuffleArray = require("../utils/shuffle-array");
 
+const MAX_DISHES_HOME_SECTION = 20;
+
 const _getRandomRestaurant = async dishesTypes => {
   const allRestaurants = await RestaurantDAO.readByDishType(dishesTypes);
 
@@ -58,7 +60,9 @@ exports.createInBatch = async (req, res, next) => {
 
 exports.readAll = async (req, res, next) => {
   try {
-    const dishes = await DishDAO.readAll();
+    const allDishes = await DishDAO.readAll();
+    const shuffledDishesArray = shuffleArray(allDishes);
+    const dishes = shuffledDishesArray.slice(0, MAX_DISHES_HOME_SECTION);
 
     return res.status(200).json({
       dishes
