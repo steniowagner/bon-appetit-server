@@ -7,7 +7,7 @@ const DishesDAO = require("../dao/dish-dao");
 const calculateDistanceCoordinates = require("../utils/calculate-distance-coordinates");
 const shuffleArray = require("../utils/shuffle-array");
 
-const MAX_NEARBY_RESTAURANTS = 12;
+const MAX_NEARBY_RESTAURANTS = 10;
 const MAX_DISHES_MENU = 10;
 
 const _getRandomNumber = (minValue, maxValue) => {

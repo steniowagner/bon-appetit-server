@@ -9,6 +9,14 @@ const EventSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  mediumImageURL: {
+    type: String,
+    required: true
+  },
+  smallImageURL: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true
@@ -25,7 +33,7 @@ const EventSchema = new mongoose.Schema({
         "Dessert",
         "Fast-Food",
         "Homemade",
-        "Japanase",
+        "Japanese",
         "Pasta",
         "Pizza",
         "Salad",

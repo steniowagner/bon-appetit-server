@@ -1,6 +1,7 @@
 const debug = require("debug")("bon-appetit-api:event-controller");
 const mongoose = require("../db");
 
+const shuffleArray = require("../utils/shuffle-array");
 const RestaurantDAO = require("../dao/restaurant-dao");
 const EventDAO = require("../dao/event-dao");
 
@@ -39,7 +40,8 @@ exports.createInBatch = async (req, res, next) => {
 
 exports.readAll = async (req, res, next) => {
   try {
-    const events = await EventDAO.readAll();
+    const allEvents = await EventDAO.readAll();
+    const events = shuffleArray(allEvents);
 
     return res.status(200).json({
       events

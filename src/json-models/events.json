@@ -1,18 +1,92 @@
 [
   {
-    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/pasta-event.jpg",
-    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/pasta-event-thumbnail.jpg",
-    "title": "Pasta Festival",
-    "description": "An Amazing event with most extensive variety of the best of Italian cuisine!",
-    "dishesTypes": ["Pasta", "Pizza"],
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/large/thursday-seafood.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/medium/thursday-seafood.jpeg",
+    "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/thursday-seafood.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/thursday-seafood.jpeg",
+    "title": "Thursday of the Seafood",
+    "description": "A day with dozens of the most delicious and exotic dishes from the sea!",
+    "dishesTypes": ["Seafood"],
+    "restaurantsParticipating": 18
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/large/nippon.png",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/medium/nippon.png",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/nippon.png",
+    "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/nippon.png",
+    "title": "Nippon Day",
+    "description": "The most exotic dishes from the Japanese cuisine will be here on this weekend.",
+    "dishesTypes": ["Japanese"],
     "restaurantsParticipating": 12
   },
   {
-    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/pasta-event.jpg",
-    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/pasta-event-thumbnail.jpg",
-    "title": "PUTAIRAAA",
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/large/pizza-fest.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/medium/pizza-fest.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/pizza-fest.jpeg",
+    "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/pizza-fest.jpeg",
+    "title": "Pizza Fest",
+    "description": "The most diverse, delicious and exotic Pizzas that will find in your life!",
+    "dishesTypes": ["Pizza"],
+    "restaurantsParticipating": 20
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/large/healthy-food.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/medium/healthy-food.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/healthy-food.jpeg",
+    "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/healthy-food.jpeg",
+    "title": "Healthly Life",
+    "description": "Looking for some place with some healthy and good food? This will be the right choice for you.",
+    "dishesTypes": ["Salad"],
+    "restaurantsParticipating": 17
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/large/pasta-fest.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/medium/pasta-fest.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/pasta-fest.jpeg",
+    "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/pasta-fest.jpeg",
+    "title": "Pasta Festival",
     "description": "An Amazing event with most extensive variety of the best of Italian cuisine!",
-    "dishesTypes": ["Pasta", "Pizza"],
-    "restaurantsParticipating": 12
+    "dishesTypes": ["Pasta"],
+    "restaurantsParticipating": 19
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/large/sweet-day.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/medium/sweet-day.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/sweet-day.jpeg",
+    "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/sweet-day.jpeg",
+    "title": "Sweet Day",
+    "description": "Sweet, Sweet everywhere! The most delicious sweets, candies and desserts of the city are here!",
+    "dishesTypes": ["Dessert"],
+    "restaurantsParticipating": 19
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/large/only-grill.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/medium/only-grill.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/only-grill.jpeg",
+    "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/only-grill.jpeg",
+    "title": "Only on Grill",
+    "description": "Wishing a juicy steak for your dinner? You'll find the best of the grill in the city right below.",
+    "dishesTypes": ["Barbecue"],
+    "restaurantsParticipating": 17
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/large/cearense-cuisine.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/medium/cearense-cuisine.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/cearense-cuisine.jpeg",
+    "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/cearense-cuisine.jpeg",
+    "title": "Cearense Cuisine",
+    "description": "An Event focused only on the best dishes of the root culture of the state of Ceará.",
+    "dishesTypes": ["Homemade"],
+    "restaurantsParticipating": 9
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/large/fat-snacks.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/medium/fat-snacks.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/fat-snacks.jpeg",
+    "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/fat-snacks.jpeg",
+    "title": "Fat Snacks",
+    "description": "An unique opportunity to find the most amazing snacks of the city on the next Sunday!",
+    "dishesTypes": ["Fast-Food"],
+    "restaurantsParticipating": 11
   }
 ]
