@@ -34,7 +34,7 @@ const DishSchema = new mongoose.Schema({
       "Salad",
       "Seafood"
     ],
-    require: true
+    required: true
   },
   stars: {
     type: Number,
