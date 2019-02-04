@@ -5,6 +5,7 @@ const DishesDAO = require("../dao/dish-dao");
 const calculateDistanceCoordinates = require("../utils/calculate-distance-coordinates");
 const shuffleArray = require("../utils/shuffle-array");
 
+const MAX_NEARBY_RESTAURANTS = 10;
 const MAX_DISHES_MENU = 10;
 
 const _getRandomNumber = (minValue, maxValue) => {
@@ -305,7 +306,7 @@ exports.getNearbyRestaurants = async (req, res, next) => {
       });
 
     return res.status(200).json({
-      restaurants
+      restaurants: restaurants.slice(0, MAX_NEARBY_RESTAURANTS)
     });
   } catch (error) {
     return res.status(500).json({

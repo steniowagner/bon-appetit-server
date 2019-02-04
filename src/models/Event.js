@@ -9,6 +9,14 @@ const EventSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  mediumImageURL: {
+    type: String,
+    required: true
+  },
+  smallImageURL: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true

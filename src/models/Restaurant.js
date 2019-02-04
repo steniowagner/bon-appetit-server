@@ -5,6 +5,10 @@ const RestaurantSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  mediumImageURL: {
+    type: String,
+    required: true
+  },
   thumbnailImageURL: {
     type: String,
     required: true
@@ -45,13 +49,13 @@ const RestaurantSchema = new mongoose.Schema({
     {
       type: String,
       enum: [
-        "Barbecue",
-        "Dessert",
-        "Fast-Food",
         "Homemade",
-        "Japanese",
+        "Barbecue",
+        "Fast-Food",
         "Pasta",
         "Pizza",
+        "Dessert",
+        "Japanese",
         "Salad",
         "Seafood"
       ],

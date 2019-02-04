@@ -9,6 +9,10 @@ const DishSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  mediumImageURL: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true
@@ -30,7 +34,7 @@ const DishSchema = new mongoose.Schema({
       "Salad",
       "Seafood"
     ],
-    require: true
+    required: true
   },
   stars: {
     type: Number,

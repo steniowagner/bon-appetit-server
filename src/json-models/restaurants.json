@@ -1,53 +1,513 @@
 [
   {
-    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares.jpg",
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/acai-colares.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/acai-colares.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/acai-colares.jpeg",
     "name": "Açaí do Colares",
-    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares-thumbnail.jpg",
-    "stars": 4.5,
+    "stars": 5,
     "location": {
       "coordinates": [-3.7271887, -38.5902263],
-      "address": "Independência Avenue, 985 - Quintino Cunha, Fortaleza"
+      "address": "Independência av, 985 - Quintino Cunha, Fortaleza"
     },
-    "operatingHours": {
-      "open": "17:00",
-      "close": "00:00"
-    },
-    "isOpen": true,
-    "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos",
-    "dishesTypes": ["Dessert", "Salad"]
+    "operatingHours": { "open": "17:00", "close": "00:00" },
+    "description": "The best option for those that are looking for something healthy to put on their mouths.",
+    "dishesTypes": ["Dessert", "Salad", "Seafood"]
   },
   {
-    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares.jpg",
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/lanche-abencoado.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/lanche-abencoado.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/lanche-abencoado.jpeg",
     "name": "Lanche do Abençoado",
-    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares-thumbnail.jpg",
-    "stars": 4.5,
+    "stars": 3.5,
     "location": {
       "coordinates": [-3.7205323, -38.5650488],
-      "address": "Independência Avenue, 985 - Quintino Cunha, Fortaleza"
+      "address": "Dom Helio Campos st, 80 - Carlito Pamplona, Fortaleza"
     },
-    "operatingHours": {
-      "open": "17:00",
-      "close": "00:00"
-    },
-    "isOpen": false,
-    "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos",
-    "dishesTypes": ["Dessert", "Salad"]
+    "operatingHours": { "open": "17:00", "close": "00:30" },
+    "description": "Dozens of sandwiches and Pizzas types, and with the possibility to eat some sweet at the end!",
+    "dishesTypes": ["Fast-Food", "Pizza", "Pasta", "Dessert"]
   },
   {
-    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares.jpg",
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/legusto.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/legusto.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/legusto.jpeg",
     "name": "LeGusto",
-    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/acai-colares-thumbnail.jpg",
-    "stars": 4.5,
+    "stars": 5,
     "location": {
       "coordinates": [-3.7401124, -38.5591975],
-      "address": "Independência Avenue, 985 - Quintino Cunha, Fortaleza"
+      "address": "Jovita Feitosa av, 2165 - Parquelândia, Fortaleza"
     },
-    "operatingHours": {
-      "open": "17:00",
-      "close": "00:00"
+    "operatingHours": { "open": "18:00", "close": "00:00" },
+    "description": "Surrounded by the best of the Italian cuisine, we can make you just fall in love with our pasta.",
+    "dishesTypes": ["Pasta", "Pizza", "Dessert", "Fast-Food", "Barbecue"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/bangs.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/bangs.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/bangs.jpeg",
+    "name": "Bang's",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.73519, -38.49477],
+      "address": "Marcos Macedo st, 850 - Aldeota, Fortaleza"
     },
-    "isOpen": true,
-    "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos",
-    "dishesTypes": ["Pizza", "Pasta"]
+    "operatingHours": { "open": "11:00", "close": "00:00" },
+    "description": "Lots of different meat options, dozens of pasta options and a mix of all of this in our fast-food dishes.",
+    "dishesTypes": ["Pasta", "Pizza", "Fast-Food", "Barbecue"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/cantinho-frango.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/cantinho-frango.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/cantinho-frango.jpeg",
+    "name": "Cantinho do Frango",
+    "stars": 4,
+    "location": {
+      "coordinates": [-3.73454, -38.51043],
+      "address": "Torres Câmara st, 71 - Aldeota, Fortaleza"
+    },
+    "operatingHours": { "open": "16:00", "close": "22:30" },
+    "description": "We can make you remember your first meal that you had in your life with our Homemade dishes, fall in love for our pasta, and desire our meat.",
+    "dishesTypes": ["Pasta", "Homemade", "Barbecue"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/cabana-jardins.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/cabana-jardins.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/cabana-jardins.jpeg",
+    "name": "Cabaña del Primo Jardins",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.73519, -38.49796],
+      "address": "Dona Maria Tomásia st, 503 - Aldeota, Fortaleza"
+    },
+    "operatingHours": { "open": "12:00", "close": "00:00" },
+    "description": "With an adorable environment, you'll delicious with our options, either for lunch or dinner options.",
+    "dishesTypes": ["Seafood", "Homemade", "Barbecue", "Salad"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/santa-grelha-meireles.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/santa-grelha-meireles.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/santa-grelha-meireles.jpeg",
+    "name": "Santa Grelha Meireles",
+    "stars": 5,
+    "location": {
+      "coordinates": [-3.73179, -38.500876],
+      "address": "Tibúrcio Cavalcante st, 790 - Meireles, Fortaleza"
+    },
+    "operatingHours": { "open": "11:30", "close": "00:00" },
+    "description": "We are masters of grill, we can make the best grill that you ever tasted, but without forget the healthy line.",
+    "dishesTypes": ["Dessert", "Homemade", "Barbecue", "Japanese", "Salad"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/misaki.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/misaki.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/misaki.jpeg",
+    "name": "Misaki Restaurante",
+    "stars": 4,
+    "location": {
+      "coordinates": [-3.73504, -38.49774],
+      "address": "Desembargador Moreira av, 1011 - Shopping Jardins Open Mall, Fortaleza"
+    },
+    "operatingHours": { "open": "11:30", "close": "01:00" },
+    "description": "If you want a healthy food that makes your body to thank you, we have the right fuel for you.",
+    "dishesTypes": ["Japanese", "Salad", "Dessert"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/cabana-riomar.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/cabana-riomar.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/cabana-riomar.jpeg",
+    "name": "Cabaña del Primo Riomar",
+    "stars": 5,
+    "location": {
+      "coordinates": [-3.74197, -38.47246],
+      "address": "Desembargador Lauro Nogueira st, 1500 - Riomar Shopping, Fortaleza"
+    },
+    "operatingHours": { "open": "12:00", "close": "00:00" },
+    "description": "We have dishes for all of tastes. Our options will make you want to experience something new for your next meal.",
+    "dishesTypes": [
+      "Pizza",
+      "Homemade",
+      "Pasta",
+      "Dessert",
+      "Japanese",
+      "Salad"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/dom-pastel.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/dom-pastel.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/dom-pastel.jpeg",
+    "name": "Dom Pastel - Coco Bambu",
+    "stars": 5,
+    "location": {
+      "coordinates": [-3.73491, -38.51141],
+      "address": "Carlos Vasconcelos st, 996 - Aldeota, Fortaleza"
+    },
+    "operatingHours": { "open": "11:00", "close": "01:00" },
+    "description": "Are you a pasta lover? If you do, this is the right place for you. We promise, you won't regret.",
+    "dishesTypes": ["Pasta", "Pizza", "Fast-Food"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/coco-bambu-meireles.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/coco-bambu-meireles.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/coco-bambu-meireles.jpeg",
+    "name": "Coco Bambu Meireles",
+    "stars": 5,
+    "location": {
+      "coordinates": [-3.7322, -38.49074],
+      "address": "Canuto de Aguiar st, 1317 - Meireles, Fortaleza"
+    },
+    "operatingHours": { "open": "11:00", "close": "02:00" },
+    "description": "We have the most healthy food in the city. If you're looking for something to keep your diet, this place is for you.",
+    "dishesTypes": ["Seafood", "Salad", "Dessert", "Japanese"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/coco-bambu-sul.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/coco-bambu-sul.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/coco-bambu-sul.jpeg",
+    "name": "Coco Bambu Sul",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.79076, -38.48123],
+      "address": "República da Armênia st, 1154 - Água Fria, Fortaleza"
+    },
+    "operatingHours": { "open": "11:30", "close": "01:00" },
+    "description": "With a simple way, we can make you feel something new and unique after to taste our amazing dishes.",
+    "dishesTypes": ["Seafood", "Japanese", "Salad", "Dessert"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/geppos-beira-mar.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/geppos-beira-mar.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/geppos-beira-mar.jpeg",
+    "name": "Geppos Beira Mar",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.72587, -38.49161],
+      "address": "Beira-Mar av, 3222 - Varjota, Fortaleza"
+    },
+    "operatingHours": { "open": "16:00", "close": "02:00" },
+    "description": "Do you love a light food? You're tired of heavy weight food and want something more clean? If you do, you're invited.",
+    "dishesTypes": ["Seafood", "Japanese", "Salad", "Dessert"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/balcony-bistro.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/balcony-bistro.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/balcony-bistro.jpeg",
+    "name": "Balcony Bistro",
+    "stars": 4,
+    "location": {
+      "coordinates": [-3.73535, -38.48916],
+      "address": "Frederico Borges st, 616 - Varjota Fortaleza,"
+    },
+    "operatingHours": { "open": "19:00", "close": "00:00" },
+    "description": "We have a lot of possibilites of pastas, but we also have the most delicious desserts and salads of the city. Visit us!",
+    "dishesTypes": ["Pasta", "Barbecue", "Seafood", "Salad", "Dessert"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/lo.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/lo.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/lo.jpeg",
+    "name": "Lô Restaurante",
+    "stars": 5,
+    "location": {
+      "coordinates": [-3.72123, -38.52324],
+      "address": "Pessoa Anta av, 217 - Praia de Iracema, Fortaleza"
+    },
+    "operatingHours": { "open": "19:00", "close": "01:00" },
+    "description": "Are you looking for something different to eat? If you do, we have a lot of options for your taste!",
+    "dishesTypes": ["Japanese", "Seafood", "Salad", "Dessert"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/mais-sabor.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/mais-sabor.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/mais-sabor.jpeg",
+    "name": "Pizzaria Esfiharia Mais Sabor",
+    "stars": 4,
+    "location": {
+      "coordinates": [-3.78853, -38.61965],
+      "address": "Guararema st, 408 - Granja Lisboa, Fortaleza"
+    },
+    "operatingHours": { "open": "16:00", "close": "00:00" },
+    "description": "We have the best pasta of this side of the city. We are master of make people fall in love with food.",
+    "dishesTypes": ["Fast-Food", "Pasta", "Pizza", "Japanese", "Dessert"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/oxente.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/oxente.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/oxente.jpeg",
+    "name": "Oxente Restô",
+    "stars": 4,
+    "location": {
+      "coordinates": [-3.77511, -38.60516],
+      "address": "H av, 2315 - Conjunto Ceará I, Fortaleza"
+    },
+    "operatingHours": { "open": "05:00", "close": "02:00" },
+    "description": "Are you looking for something simple, but different and delicious? If you do so, you came to the right place!",
+    "dishesTypes": ["Fast-Food", "Pasta", "Pizza", "Homemade", "Dessert"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/laco-vaqueiro.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/laco-vaqueiro.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/laco-vaqueiro.jpeg",
+    "name": "Restaurante Laço do Vaqueiro",
+    "stars": 3.5,
+    "location": {
+      "coordinates": [-3.77303, -38.61174],
+      "address": "G av, 340 - Conjunto Ceará II, Fortaleza"
+    },
+    "operatingHours": { "open": "10:00", "close": "22:00" },
+    "description": "With the most fresh vegetables, we have the most delicious salads in the city, as the best homemade cuisine too!",
+    "dishesTypes": ["Homemade", "Pasta", "Salad", "Barbecue", "Pizza"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/top-sushi-lounge.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/top-sushi-lounge.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/top-sushi-lounge.jpeg",
+    "name": "Top Sushi Lounge",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.76427, -38.62234],
+      "address": "Tampico st, 761 - Parque Guadalajara, Caucaia"
+    },
+    "operatingHours": { "open": "18:00", "close": "23:00" },
+    "description": "Are you expecting something exotic for your next meal? We think that we can help you to found it out.",
+    "dishesTypes": ["Japanese", "Seafood", "Salad", "Dessert"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/picanha-savio.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/picanha-savio.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/picanha-savio.jpeg",
+    "name": "Picanha do Sávio",
+    "stars": 5,
+    "location": {
+      "coordinates": [-3.77466, -38.59345],
+      "address": "Manoel Antônio Leite st, 336 - Bonsucesso, Fortaleza"
+    },
+    "operatingHours": { "open": "10:30", "close": "22:30" },
+    "description": "We have the most complete cuisine in the city. With options that make anyone really enjoy their time with our delicious dishes.",
+    "dishesTypes": ["Barbecue", "Pizza", "Pasta", "Fast-Food", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/sabor-baiao.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/sabor-baiao.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/sabor-baiao.jpeg",
+    "name": "Sabor do Baião",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.81488, -38.49835],
+      "address": "Frei Cirilo av, 3471 - Messejana, Fortaleza"
+    },
+    "operatingHours": { "open": "08:00", "close": "00:00" },
+    "description": "Simple and delicious. That'ts what you can expect from ours amazing and delicious dishes.",
+    "dishesTypes": ["Barbecue", "Pizza", "Pasta", "Homemade", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/temakeria-forataleza.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/temakeria-forataleza.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/temakeria-forataleza.jpeg",
+    "name": "Temakeria Fortaleza",
+    "stars": 4,
+    "location": {
+      "coordinates": [-3.82795, -38.48938],
+      "address": "José Hipólito st, 1234 B - Messejana, Fortaleza"
+    },
+    "operatingHours": { "open": "18:00", "close": "23:00" },
+    "description": "The best options for those that really enjoy an exotic cuisine, and always like to try something new.",
+    "dishesTypes": ["Japanese", "Seafood", "Salad", "Dessert"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/churrascaria-elmos-grill.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/churrascaria-elmos-grill.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/churrascaria-elmos-grill.jpeg",
+    "name": "Churrascaria Elmos Grill",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.82487, -38.46363],
+      "address": "Eduardo Guimarães st, 100 - Lagoa Redonda, Fortaleza"
+    },
+    "operatingHours": { "open": "10:00", "close": "23:00" },
+    "description": "Delicious and Lovely are the best words to describe what we serve in here.",
+    "dishesTypes": ["Barbecue", "Japanese", "Seafood", "Pizza", "Pasta"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/rei-sushi.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/rei-sushi.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/rei-sushi.jpeg",
+    "name": "Rei do Sushi",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.73664, -38.56966],
+      "address": "Mister Hull av, 4300 - Presidente. Kennedy, Fortaleza"
+    },
+    "operatingHours": { "open": "11:00", "close": "22:00" },
+    "description": "With the best of Japan culture, we serve the most delicious dishes in the city. Come and see for yourself!",
+    "dishesTypes": ["Dessert", "Japanese", "Seafood", "Salad", "Pasta"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/porquinho-ouro.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/porquinho-ouro.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/porquinho-ouro.jpeg",
+    "name": "Porquinho De Ouro",
+    "stars": 5,
+    "location": {
+      "coordinates": [-3.71533, -38.58857],
+      "address": "Coronel Carvalho av, 1434 - Barra do Ceará, Fortaleza"
+    },
+    "operatingHours": { "open": "11:00", "close": "00:00" },
+    "description": "If you really enjoy a delicious food roasted on grill, we have options that you want to repeat and repeat again.",
+    "dishesTypes": ["Barbecue", "Seafood", "Pizza", "Pasta"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/dom-anderson.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/dom-anderson.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/dom-anderson.jpeg",
+    "name": "Dom Anderson Restaurante e Petiscaria",
+    "stars": 3,
+    "location": {
+      "coordinates": [-3.71822, -38.58072],
+      "address": "Rio Tocantins st, 358 - Jardim Iracema, Fortaleza"
+    },
+    "operatingHours": { "open": "14:00", "close": "23:00" },
+    "description": "The perfect place to talk to your friends and family, while eat something really good.",
+    "dishesTypes": ["Barbecue", "Pizza", "Pasta", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/kyoto-sushi.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/kyoto-sushi.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/kyoto-sushi.jpeg",
+    "name": "Kyoto Sushi Bar",
+    "stars": 3.5,
+    "location": {
+      "coordinates": [-3.71799, -38.57382],
+      "address": "Teodomiro De Castro av, 2344 - Álvaro Weyne, Fortaleza"
+    },
+    "operatingHours": { "open": "17:00", "close": "02:00" },
+    "description": "Delicious desserts, amazing salads, exotics seafoods and an amazing japanese cuisine are expeting for you righth here!",
+    "dishesTypes": ["Japanese", "Salad", "Dessert", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/nory.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/nory.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/nory.jpeg",
+    "name": "Nory Sushi",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.70861, -38.59028],
+      "address": "Coronel de Carvalho av, 606 - Vila Velha, Fortaleza - CE, 61936-235"
+    },
+    "operatingHours": { "open": "18:00", "close": "00:00" },
+    "description": "The best options for those tat has a refined taste, and is always looking for a extraordinary thing to dinner.",
+    "dishesTypes": ["Japanese", "Salad", "Dessert", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/nenem-picanha.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/nenem-picanha.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/nenem-picanha.jpeg",
+    "name": "Churrascaria Neném da Picanha",
+    "stars": 5,
+    "location": {
+      "coordinates": [-3.7181, -38.55533],
+      "address": "Francisco Sá av, 4445 - Carlito Pamplona, Fortaleza"
+    },
+    "operatingHours": { "open": "08:00", "close": "22:00" },
+    "description": "Good environment and amazing dishes make of this place the best place in the city to hang out with your family.",
+    "dishesTypes": ["Barbecue", "Pasta", "Pizza", "Salad", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/sabor-massa.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/sabor-massa.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/sabor-massa.jpeg",
+    "name": "Sabor da Massa",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.73209, -38.54976],
+      "address": "Conrado Cabral st, 802-E - São Gerardo, Fortaleza"
+    },
+    "operatingHours": { "open": "17:00", "close": "23:00" },
+    "description": "The most diversified menu in the city, and with a lot of different options that will make you come back!",
+    "dishesTypes": ["Pizza", "Pasta", "Japanese", "Salad", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/spoleto.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/spoleto.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/spoleto.jpeg",
+    "name": "Spoleto",
+    "stars": 5,
+    "location": {
+      "coordinates": [-3.72838, -38.57121],
+      "address": "Santos Dumont av, 3131 - Aldeota, Fortaleza"
+    },
+    "operatingHours": { "open": "10:00", "close": "22:00" },
+    "description": "The best mix of different cusines you can find in here. We assure that you will love it.",
+    "dishesTypes": ["Pizza", "Pasta", "Japanese", "Salad", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/50-sabores.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/50-sabores.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/50-sabores.jpeg",
+    "name": "Pizzaria e Restaurante 50 Sabores",
+    "stars": 4,
+    "location": {
+      "coordinates": [-3.72838, -38.57121],
+      "address": "Sargento Hermínio Sampaio av, 2825 - Pres. Kennedy, Fortaleza"
+    },
+    "operatingHours": { "open": "10:00", "close": "00:00" },
+    "description": "The best meat of the city and the best options from sea. This the place for you tonight.",
+    "dishesTypes": ["Barbecue", "Pizza", "Pasta", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/emporio-fatima.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/emporio-fatima.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/emporio-fatima.jpeg",
+    "name": "Empório De Fátima",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.75338, -38.52816],
+      "address": "Deputado Oswaldo Studart av, 250 - Fatima, Fortaleza"
+    },
+    "operatingHours": { "open": "17:30", "close": "00:00" },
+    "description": "We have the best of the Italian cuisine, with dishes that will make you fall in love for us.",
+    "dishesTypes": ["Pasta", "Pizza", "Fast-Food", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/matuto.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/matuto.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/matuto.jpeg",
+    "name": "Churrascaria o Matuto",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.79254, -38.47599],
+      "address": "Engenheiro Leal Lima Verde av, 470 - Edson Queiroz, Fortaleza"
+    },
+    "operatingHours": { "open": "10:00", "close": "22:00" },
+    "description": "Extraordinary sense of good taste? We have the right choices for your next meal.",
+    "dishesTypes": ["Barbecue", "Pasta", "Pizza", "Seafood"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/porpino-burger.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/porpino-burger.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/porpino-burger.jpeg",
+    "name": "Porpino Burger",
+    "stars": 4.5,
+    "location": {
+      "coordinates": [-3.73285, -38.49193],
+      "address": "Senador Virgilio Tavora av, 597 - Varjota, Fortaleza"
+    },
+    "operatingHours": { "open": "17:00", "close": "02:00" },
+    "description": "The most complete menu in the city will provide you a lot of new sensations and tastes.",
+    "dishesTypes": ["Fast-Food", "Pizza", "Salad", "Barbecue"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/barreto.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/barreto.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/barreto.jpeg",
+    "name": "Barreto's Grill",
+    "stars": 4,
+    "location": {
+      "coordinates": [-3.81585, -38.61303],
+      "address": "General Osório de Paiva av, 5699 - Canindezinho, Fortaleza"
+    },
+    "operatingHours": { "open": "11:00", "close": "23:30" },
+    "description": "With dozens of options of the main cuisines of the world, you assure that you won't regret.",
+    "dishesTypes": ["Barbecue", "Pasta", "Dessert", "Seafood", "Fast-Food"]
   }
 ]
