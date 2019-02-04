@@ -1,0 +1,297 @@
+[
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/sweet-potato-fries.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/sweet-potato-fries.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/sweet-potato-fries.jpeg",
+    "title": "Sweet potato fries",
+    "description": "These chunky chips are spiced with cayenne pepper to make them extra moreish. Enjoy as a snack on their own or on the side.",
+    "type": "Fast-Food",
+    "stars": 4,
+    "reviews": 10,
+    "price": 5.6,
+    "ingredients": [
+      "95g sweet potato",
+      "1 tsp rapeseed oil",
+      "¼ tsp cayenne pepper"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/sunshine-burgers.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/sunshine-burgers.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/sunshine-burgers.jpeg",
+    "title": "Sunshine burgers",
+    "description": "Teach children rolling and shaping skills with these beef patties from CBeebies' 'i can cook'.",
+    "type": "Fast-Food",
+    "stars": 3.5,
+    "reviews": 20,
+    "price": 3.6,
+    "ingredients": [
+      "2 handfuls cornflakes",
+      "225g/ 8oz beef mince",
+      "1 large egg, beaten",
+      "few handfuls plain flour",
+      "1 tbsp vegetable oil",
+      "6 each mini burger buns"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/leanburgers-with-rocket-and-peppers.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/leanburgers-with-rocket-and-peppers.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/leanburgers-with-rocket-and-peppers.jpeg",
+    "title": "Leanburgers with rocket & peppers",
+    "description": "Tasty homemade burgers with extra lean mince lightened with couscous and flavoured with herbs and chilli.",
+    "type": "Fast-Food",
+    "stars": 4.5,
+    "reviews": 20,
+    "price": 9.9,
+    "ingredients": [
+      "50g couscous",
+      "500g extra lean minced beef",
+      "1 small onion",
+      "2 tsp mixed dried herbs",
+      "3 tbsp chopped fresh chives",
+      "¼ tsp hot chilli powder",
+      "6 slices French bread",
+      "6 tsp Dijon mustard",
+      "175g roasted red pepper from a jar"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/texmex-burger.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/texmex-burger.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/texmex-burger.jpeg",
+    "title": "Tex-Mex burger",
+    "description": "Celebrate the flavours of Central American with a juicy cheeseburger topped with fresh avocado.",
+    "type": "Fast-Food",
+    "stars": 5,
+    "reviews": 14,
+    "price": 4.99,
+    "ingredients": [
+      "500g beef, pork or turkey mince",
+      "1 red onion",
+      "1 tsp cayenne pepper",
+      "1 tsp dried oregano",
+      "4 rolls",
+      "4 slices Monterey Jack cheese",
+      "4 tbsp chopped fresh tomato",
+      "1 avocado"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/beef-burger-with-sweet-potato-chilli-chips.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/beef-burger-with-sweet-potato-chilli-chips.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/beef-burger-with-sweet-potato-chilli-chips.jpeg",
+    "title": "Beef burger with sweet potato chilli chips",
+    "description": "Give hamburgers a healthy makeover by oven-cooking lean beef and serving with wholemeal bun and sweet potatoes.",
+    "type": "Fast-Food",
+    "stars": 4,
+    "reviews": 10,
+    "price": 10.9,
+    "ingredients": [
+      "4 large",
+      "1 tsp olive oil",
+      "1 tsp chilli flakes",
+      "400g pack extra-lean beef mince",
+      "1 onion",
+      "1 tbsp grated parmesan",
+      "1 tbsp tomato ketchup",
+      "4 small wholemeal buns",
+      "1 Little Gem lettuce",
+      "1 beef tomato",
+      "1 red onion"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/beef-and-salsa-burgers.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/beef-and-salsa-burgers.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/beef-and-salsa-burgers.jpeg",
+    "title": "Beef & salsa burgers",
+    "description": "A low fat, healthy and super tasty alternative to the takeaway variety.",
+    "type": "Fast-Food",
+    "stars": 5,
+    "reviews": 12,
+    "price": 4.5,
+    "ingredients": [
+      "300g lean minced beef",
+      "50g wholemeal breadcrumb",
+      "50g carrot",
+      "1 small onion",
+      "small handful parsley",
+      "1 tsp Worcestershire sauce",
+      "4 wholemeal burger buns",
+      "small pot tomato sauce"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/baked-skinny-fries.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/baked-skinny-fries.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/baked-skinny-fries.jpeg",
+    "title": "Baked skinny fries",
+    "description": "A simple side dish of homemade chips isn't always unhealthy - this version coats the potatoes in spices too.",
+    "type": "Fast-Food",
+    "stars": 4.5,
+    "reviews": 10,
+    "price": 7.6,
+    "ingredients": [
+      "1 tbsp vegetable oil",
+      "2 tsp fine cornmeal or polenta",
+      "½ tsp paprika",
+      "¼ tsp garlic",
+      "2 large potatoes"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/skinny-thai-burgers-with-sweet-potato-chips-and-pi.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/skinny-thai-burgers-with-sweet-potato-chips-and-pi.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/skinny-thai-burgers-with-sweet-potato-chips-and-pi.jpeg",
+    "title": "Skinny Thai burgers with sweet potato chips & pineapple salsa",
+    "description": "A healthy, Asian-inspired beefburger with sweet potato fries and a fruity relish - a vibrant spin on a classic.",
+    "type": "Fast-Food",
+    "stars": 4,
+    "reviews": 10,
+    "price": 3.99,
+    "ingredients": [
+      "400-500g extra lean minced pork or beef",
+      "2 tbsp Thai red curry paste",
+      "6 spring onions",
+      "200g pineapple",
+      "juice ½ lime",
+      "1 red chilli"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/turkey-burgers-sweet-potato-chips.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/turkey-burgers-sweet-potato-chips.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/turkey-burgers-sweet-potato-chips.jpeg",
+    "title": "Turkey burgers with sweet potato chips",
+    "description": "Turkey thigh mince is a lean but flavoursome meat- shape into patties with cheese and spring onions, and serve in healthier wholemeal buns.",
+    "type": "Fast-Food",
+    "stars": 3,
+    "reviews": 20,
+    "price": 7.99,
+    "ingredients": [
+      "500g turkey thigh mince",
+      "2 spring onions",
+      "85g cheddar",
+      "1kg sweet potato",
+      "3 tbsp olive oil",
+      "4 soft wholemeal rolls",
+      "¼ x cucumber"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/homemade-brie-burgers.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/homemade-brie-burgers.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/homemade-brie-burgers.jpeg",
+    "title": "Homemade brie burgers",
+    "description": "Simple flavours make for a natural, crusty texture.",
+    "type": "Fast-Food",
+    "stars": 4.5,
+    "reviews": 10,
+    "price": 11.9,
+    "ingredients": [
+      "1 small onion",
+      "2 tsp Worcestershire sauce",
+      "4 large basil",
+      "50g brie",
+      "2 sundried tomatoes in oil",
+      "salad leaves",
+      "cornichons and sliced tomatoes"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/meatloaf-burger-with-harissa-mayo.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/meatloaf-burger-with-harissa-mayo.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/meatloaf-burger-with-harissa-mayo.jpeg",
+    "title": "Meatloaf burger with harissa mayo",
+    "description": "Stretch your minced beef and bacon loaf a little further by using leftovers to create homemade hamburgers with spicy sauce.",
+    "type": "Fast-Food",
+    "stars": 2,
+    "reviews": 11,
+    "price": 5.7,
+    "ingredients": [
+      "1 tomato",
+      "25g grated cheddar",
+      "2 burger buns or rolls",
+      "2 tbsp mayonnaise",
+      "½ tsp harissa",
+      "1 Little Gem lettuce",
+      "½ small red onion"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/crispy-cajun-onion-rings.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/crispy-cajun-onion-rings.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/crispy-cajun-onion-rings.jpeg",
+    "title": "Crispy Cajun onion rings",
+    "description": "For a simple side, try oven baking breaded onion rings rather than frying to dramatically cut the fat content.",
+    "type": "Fast-Food",
+    "stars": 4,
+    "reviews": 10,
+    "price": 6.6,
+    "ingredients": [
+      "50g plain flour",
+      "1 large onion",
+      "2 egg whites",
+      "olive oil",
+      "2 tsp Cajun seasoning",
+      "100g breadcrumb"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/carrot-and-houmous-rollups.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/carrot-and-houmous-rollups.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/carrot-and-houmous-rollups.jpeg",
+    "title": "Carrot & hummus roll-ups",
+    "description": "Roll-up, roll-up - snaffle something superhealthy in a flash with these vegetarian wraps.",
+    "type": "Fast-Food",
+    "stars": 4,
+    "reviews": 12,
+    "price": 3.7,
+    "ingredients": [
+      "200g tub hummus",
+      "4 seeded wraps",
+      "4 carrots",
+      "small handful rocket leaves"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/new-york-cheesecake.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/new-york-cheesecake.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/new-york-cheesecake.jpeg",
+    "title": "New York cheesecake",
+    "description": "This authentic creamy dessert will add a taste of New York to any dining table.",
+    "type": "Fast-Food",
+    "stars": 5,
+    "reviews": 12,
+    "price": 14.9,
+    "ingredients": [
+      "900g Philadelphia cheese",
+      "250g golden caster sugar",
+      "3 tbsp plain flour",
+      "1½ tsp vanilla extract",
+      "finely grated zest of 1 lemon",
+      "1½ tsp lemon juice",
+      "3 large eggs",
+      "284ml carton soured cream"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/large/pan-fried-potato-gnocchi.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/medium/pan-fried-potato-gnocchi.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/fast-food/thumbnail/pan-fried-potato-gnocchi.jpeg",
+    "title": "Pan-fried potato gnocchi",
+    "description": "For quick comfort food at its best, you must try homemade gnocchi. It can be made a day ahead then pan-fried to crisp up just before serving.",
+    "type": "Fast-Food",
+    "stars": 3,
+    "reviews": 10,
+    "price": 9.99,
+    "ingredients": [
+      "500g Maris Piper potatoes",
+      "1 large egg",
+      "125g plain flour",
+      "splash of olive oil",
+      "knob of butter"
+    ]
+  }
+]

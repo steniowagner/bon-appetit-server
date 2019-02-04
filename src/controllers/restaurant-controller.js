@@ -5,6 +5,8 @@ const DishesDAO = require("../dao/dish-dao");
 const calculateDistanceCoordinates = require("../utils/calculate-distance-coordinates");
 const shuffleArray = require("../utils/shuffle-array");
 
+const MAX_DISHES_MENU = 10;
+
 const _getRandomNumber = (minValue, maxValue) => {
   const randomNumber =
     Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
@@ -19,15 +21,14 @@ const _getDishReviews = allReviews => {
   return shuffledReviews.slice(0, numberOfReviews);
 };
 
-const _getDishesArray = (allReviews, allDishes, dishType) => {
+const _getMenuDishes = (allReviews, allDishes, dishType) => {
   const dishesFilteredByType = allDishes.filter(
     dishe => dishe.type === dishType
   );
   const shuffledDishes = shuffleArray(dishesFilteredByType);
-  const numberOfDishes = _getRandomNumber(1, allDishes.length);
-  const dishes = shuffledDishes.slice(0, numberOfDishes);
+  const dishes = shuffledDishes.slice(0, MAX_DISHES_MENU);
 
-  const dishesArray = dishes.map(dish => {
+  const menu = dishes.map(dish => {
     const userReviews = _getDishReviews(allReviews);
     return {
       ...dish,
@@ -35,7 +36,7 @@ const _getDishesArray = (allReviews, allDishes, dishType) => {
     };
   });
 
-  return dishesArray;
+  return menu;
 };
 
 const _getRestaurantMenu = async dishesTypes => {
@@ -45,7 +46,7 @@ const _getRestaurantMenu = async dishesTypes => {
   const menu = [];
 
   dishesTypes.forEach(dishType => {
-    const menuDishes = _getDishesArray(allReviews, dishes, dishType);
+    const menuDishes = _getMenuDishes(allReviews, dishes, dishType);
 
     menu.push({
       type: dishType,

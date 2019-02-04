@@ -1,0 +1,393 @@
+[
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/acai-banana-granola.jpg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/acai-banana-granola.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/acai-banana-granola.jpg",
+    "title": "Açaí with Banana and Granola",
+    "description": "One of the most traditional desserts in the city, absolutely delicious and with a Tropical taste!",
+    "type": "Dessert",
+    "stars": 4.5,
+    "reviews": 15,
+    "price": 22,
+    "ingredients": [
+      "1 medium peeled and chopped banana-nanica",
+      "200 g of frozen açaí pulp",
+      "2 cups semi-skimmed milk",
+      "5 tablespoons granola",
+      "1 tablespoon honey",
+      "To decorate: dehydrated fruits"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/pudding-condensed-milk.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/pudding-condensed-milk.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/pudding-condensed-milk.jpeg",
+    "title": "Condensed Milk Pudding",
+    "description": "The slight bitterness of the caramel sauce and the mellow sweetness of the custard meld together to create an exquisite balance.",
+    "type": "Dessert",
+    "stars": 4,
+    "reviews": 9,
+    "price": 9.9,
+    "ingredients": [
+      "2 cans of condensed milk",
+      "2 cans integral milk",
+      "4 eggs"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/pe-de-moleque.jpg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/pe-de-moleque.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/pe-de-moleque.jpeg",
+    "title": "Pe de Moleque",
+    "description": "A sweet typical of Brazilian cuisine, made from the mixture of roasted peanuts with rapadura.",
+    "type": "Dessert",
+    "stars": 4.5,
+    "reviews": 13,
+    "price": 4.9,
+    "ingredients": [
+      "500 g of peanut",
+      "1 cup of sugar",
+      "1 can of condensed milk",
+      "3 tablespoons margarine"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/lemon-pie.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/lemon-pie.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/lemon-pie.jpeg",
+    "title": "Lemon Pie",
+    "description": "A creamy and sweet lemon pie in a graham cracker crust topped with homemade whipped cream.",
+    "type": "Dessert",
+    "stars": 5,
+    "reviews": 21,
+    "price": 8.5,
+    "ingredients": [
+      "1 1/2 cups graham cracker crumbs 1 sleeve graham crackers crushed in a food processor",
+      "2 T light brown sugar",
+      "6 T salted butter melted",
+      "2 14- oz cans sweetened condensed milk",
+      "3 egg yolks",
+      "2/3 cup freshly squeezed lemon juice around 4-5 lemons",
+      "Pinch salt",
+      "1 cup heavy whipping cream",
+      "2 T powdered sugar",
+      "1/4 t pure vanilla extract"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/cranberry-cake.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/cranberry-cake.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/cranberry-cake.jpeg",
+    "title": "Cranberry Cake",
+    "description": "This cake is a dense and rich cake balanced out with bright and tart cranberries.",
+    "type": "Dessert",
+    "stars": 5,
+    "reviews": 20,
+    "price": 8.55,
+    "ingredients": [
+      "3 eggs",
+      "2 cups granulated sugar",
+      "3/4 cups butter",
+      "1 t pure vanilla extract",
+      "2 cups all-purpose flour",
+      "12 oz fresh cranberries coated in 1 T all-purpose flour"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/pineapple-pie.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/pineapple-pie.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/pineapple-pie.jpeg",
+    "title": "Pineapple Pie",
+    "description": "Just two ingredients create this simple, light, and sweet dessert!",
+    "type": "Dessert",
+    "stars": 4,
+    "reviews": 12,
+    "price": 7,
+    "ingredients": [
+      "1 16 - oz box Angel Food Cake mix",
+      "1 20 - oz can crushed pineapple in juice"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/chocolate-cookies+with-cinnamon.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/chocolate-cookies+with-cinnamon.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/chocolate-cookies+with-cinnamon.jpeg",
+    "title": "Chocolate Cookies with Cinnamon",
+    "description": "Chocolate chip cookies with espresso and a sprinkle of cinnamon.",
+    "type": "Dessert",
+    "stars": 3.5,
+    "reviews": 8,
+    "price": 5.9,
+    "ingredients": [
+      "2 cups all-purpose flour",
+      "1/2 t baking powder",
+      "3/4 t ground cinnamon",
+      "1/4 t salt",
+      "1 cup vegan margarine",
+      "3 T instant espresso powder",
+      "1 cup powdered sugar",
+      "1/2 cup packed light brown sugar",
+      "1 1/2 cups dairy-free semi-sweet chocolate chips",
+      "About 1/4 cup granulated sugar for sprinkling"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/candy-bar-rownies.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/candy-bar-rownies.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/candy-bar-rownies.jpeg",
+    "title": "Candy Bar Brownies",
+    "description": "Delicious brownies filled with a layer of candy bars.",
+    "type": "Dessert",
+    "stars": 4,
+    "reviews": 18,
+    "price": 9.5,
+    "ingredients": ["box brownie mix for an 8x8 baking dish", "2 4.25- oz bars"]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/pecan-pie.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/pecan-pie.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/pecan-pie.jpeg",
+    "title": "Pecan Pie",
+    "description": "A classic pecan pie topped with sugary and crunchy pecans and filled with a sweet, caramel-like custard.",
+    "type": "Dessert",
+    "stars": 4.5,
+    "reviews": 20,
+    "price": 10.5,
+    "ingredients": [
+      "1 deep dish pie crust premade",
+      "1 cup white sugar",
+      "3 T brown sugar",
+      "1/2 t salt",
+      "1 cup corn syrup",
+      "1/3 cup melted butter salted",
+      "3 whole eggs beaten",
+      "3/4 t pure vanilla extract",
+      "1 heaping cup chopped pecans"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/chocolate-peanut-butter-bliss.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/chocolate-peanut-butter-bliss.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/chocolate-peanut-butter-bliss.jpeg",
+    "title": "Chocolate Peanut Butter Bliss",
+    "description": "A no bake dessert filled with layers of chocolate and peanut butter and topped with crushed cookies.",
+    "type": "Dessert",
+    "stars": 5,
+    "reviews": 24,
+    "price": 15.99,
+    "ingredients": [
+      "20 Oreo cookies divided",
+      "2 T butter melted",
+      "1 8 oz package cream cheese",
+      "1/2 cup creamy peanut butter",
+      "1 1/2 cup powdered sugar divided",
+      "1 16 oz carton frozen whipped topping",
+      "15 miniature peanut butter cups chopped",
+      "1 cup cold milk",
+      "1 3.9 oz box instant chocolate fudge pudding mix (not cook & serve)"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/caramel-apple-dump-cake.jpg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/caramel-apple-dump-cake.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/caramel-apple-dump-cake.jpeg",
+    "title": "Caramel Apple Dump Cake",
+    "description": "An easy caramel apple cake where the ingredients are layered and baked into the most delicious dessert topped with vanilla ice cream and caramel sauce.",
+    "type": "Dessert",
+    "stars": 5,
+    "reviews": 14,
+    "price": 13.99,
+    "ingredients": [
+      "2 21 oz cans apple pie filling",
+      "2 t ground cinnamon",
+      "1 t ground nutmeg",
+      "1 11 oz package caramel bits",
+      "1 15.25 oz box yellow cake mix",
+      "3/4 cup 1 1/2 sticks butter, cut into thin slices",
+      "Toppings: Vanilla Ice Cream and Caramel Sauce"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/pumpkin-pie.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/pumpkin-pie.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/pumpkin-pie.jpeg",
+    "title": "Pumpkin Pie",
+    "description": "A delicous pumpkin pie filled with delicious fall seasonings.",
+    "type": "Dessert",
+    "stars": 4.5,
+    "reviews": 12,
+    "price": 9.99,
+    "ingredients": [
+      "1 unbaked deep dish pie shell",
+      "2 cups pumpkin puree not pumpkin pie filling",
+      "1 cup heavy cream",
+      "1/2 cup half & half",
+      "1/2 t salt",
+      "1/4 cup white sugar",
+      "1/2 cup light brown sugar",
+      "2 eggs plus 1 yolk, whisked",
+      "2 t ground cinnamon",
+      "1/4 t ground nutmeg",
+      "1/4 t ground cloves",
+      "3/4 t ground ginger"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/banana-pie.jpg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/banana-pie.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/banana-pie.jpeg",
+    "title": "Banana Cream Pie",
+    "description": "A creamy and delicious dessert made with one of the most famous fruit of the world.",
+    "type": "Dessert",
+    "stars": 4.5,
+    "reviews": 11,
+    "price": 19.9,
+    "ingredients": [
+      "18 whole graham crackers the 4-section large pieces",
+      "1/3 cup white sugar",
+      "1/3 cup melted butter",
+      "1 3.4 oz box of instant vanilla pudding",
+      "1 cup cold water",
+      "1 14- oz can sweetened condensed milk",
+      "1 cup heavy whipping cream",
+      "2 large bananas or 4 small bananas",
+      "1 cup heavy whipping cream",
+      "1/3 cup powdered sugar"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/banana-pudding.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/banana-pudding.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/banana-pudding.jpeg",
+    "title": "Banana Pudding",
+    "description": "Layers of creamy and sweet pudding, banana slices, and vanilla wafers create this rich dessert classic.",
+    "type": "Dessert",
+    "stars": 4,
+    "reviews": 18,
+    "price": 15,
+    "ingredients": [
+      "1 14- oz. can sweetened condensed milk",
+      "1 1/2 cups cold water",
+      "1 3.4- oz. box vanilla instant pudding mix",
+      "3 cups cold heavy cream",
+      "1 12- oz. box vanilla wafers",
+      "4 cups sliced bananas"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/caramel-cake.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/caramel-cake.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/caramel-cake.jpeg",
+    "title": "Caramel Apple Bundt Cake",
+    "description": "A moist cake filled with fresh apples and drizzled with sweet caramel glaze!",
+    "type": "Dessert",
+    "stars": 5,
+    "reviews": 15,
+    "price": 12,
+    "ingredients": [
+      "1 box 2-layer size yellow cake mix",
+      "1 box 3.4 oz vanilla instant pudding mix",
+      "1 cup water",
+      "4 eggs",
+      "1/3 cup vegetable oil",
+      "1/4 cup whole milk",
+      "3 Granny Smith apples"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/mango-raspberry-crips.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/mango-raspberry-crips.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/mango-raspberry-crips.jpeg",
+    "title": "Mango Raspberry Crisp",
+    "description": "A delicious combination of sweet and tart fruit with a crisp oat and coconut topping!",
+    "type": "Dessert",
+    "stars": 5,
+    "reviews": 15,
+    "price": 14.9,
+    "ingredients": [
+      "4 cups chopped frozen mango",
+      "2 cups frozen raspberries",
+      "3 T granulated sugar",
+      "1 1/2 T arrowroot powder",
+      "1 cup old-fashioned oats",
+      "1/2 cup all-purpose flour",
+      "1/4 cup unsweetened shredded coconut",
+      "1/4 cup granulated sugar",
+      "1/4 t ground cinnamon",
+      "1/4 coconut oil melted"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/coconut-cream-cake.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/coconut-cream-cake.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/coconut-cream-cake.jpeg",
+    "title": "Coconut Cream Cake",
+    "description": "Cool and moist coconut cake with just the right amount of sweet!",
+    "type": "Dessert",
+    "stars": 4.5,
+    "reviews": 12,
+    "price": 14.9,
+    "ingredients": [
+      "1 15.25- oz box White Cake Mix",
+      "1 15- oz can Cream of Coconut",
+      "1 9- oz container Coco Whip",
+      "1 14- oz package sweetened shredded coconut"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/ice-cream-sandwitch-cake.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/ice-cream-sandwitch-cake.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/ice-cream-sandwitch-cake.jpeg",
+    "title": "Ice Cream Sandwich Cake",
+    "description": "A delicious and easy frozen dessert with ice cream sandwiches, caramel and hot fudge.",
+    "type": "Dessert",
+    "stars": 4,
+    "reviews": 11,
+    "price": 12,
+    "ingredients": [
+      "24 Ice Cream Sandwiches",
+      "1 12 oz jar caramel sauce",
+      "1 12 oz jar hot fudge",
+      "1 8 oz tup whipped"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/apple-cupcake.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/apple-cupcake.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/apple-cupcake.jpeg",
+    "title": "Apple Spice Cupcakes with Cinnamon Cream Cheese Frosting",
+    "description": "Apple cupcakes filled with spices and real apples topped with cinnamon infused cream cheese frosting.",
+    "type": "Dessert",
+    "stars": 5,
+    "reviews": 19,
+    "price": 21.99,
+    "ingredients": [
+      "1 1/4 cups all-purpose flour",
+      "1 t baking powder",
+      "1/2 t salt",
+      "1/4 t ground cinnamon",
+      "1/4 ground ginger",
+      "1 egg",
+      "1 cup granulated sugar",
+      "1/4 cup + 2 T buttermilk",
+      "1 1/2 cups grated gala apples"
+    ]
+  },
+  {
+    "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/large/apple-caramel.jpeg",
+    "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/apple-caramel.jpeg",
+    "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/apple-caramel.jpeg",
+    "title": "Apple Pie Caramel Apples",
+    "description": "Caramel apples surrounded by white chocolate and cinnamon sugar.",
+    "type": "Dessert",
+    "stars": 3.5,
+    "reviews": 16,
+    "price": 16.4,
+    "ingredients": [
+      "4 to 6 Granny Smith apples",
+      "1 11 oz package of caramels",
+      "1 12 oz package of white chocolate chips",
+      "cinnamon sugar"
+    ]
+  }
+]
