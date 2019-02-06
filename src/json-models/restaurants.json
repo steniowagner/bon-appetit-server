@@ -444,11 +444,11 @@
     "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/large/50-sabores.jpeg",
     "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/medium/50-sabores.jpeg",
     "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/restaurants/thumbnail/50-sabores.jpeg",
-    "name": "Pizzaria e Restaurante 50 Sabores",
+    "name": "Liig Pizza",
     "stars": 4,
     "location": {
-      "coordinates": [-3.72838, -38.57121],
-      "address": "Sargento Hermínio Sampaio av, 2825 - Pres. Kennedy, Fortaleza"
+      "coordinates": [-3.72728, -38.55075],
+      "address": "José Cândido st, 274 - Monte Castelo, Fortaleza"
     },
     "operatingHours": { "open": "10:00", "close": "00:00" },
     "description": "The best meat of the city and the best options from sea. This the place for you tonight.",
