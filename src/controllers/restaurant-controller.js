@@ -1,3 +1,5 @@
+const debug = require("debug")("bon-appetit-api:restaurant-controller");
+
 const RestaurantDAO = require("../dao/restaurant-dao");
 const ReviewDAO = require("../dao/review-dao");
 const DishesDAO = require("../dao/dish-dao");
@@ -15,8 +17,7 @@ const _getRandomNumber = (minValue, maxValue) => {
   return randomNumber;
 };
 
-const _getDishReviews = allReviews => {
-  const numberOfReviews = _getRandomNumber(1, allReviews.length);
+const _getDishReviews = (allReviews, numberOfReviews) => {
   const shuffledReviews = shuffleArray(allReviews);
 
   return shuffledReviews.slice(0, numberOfReviews);
@@ -30,7 +31,7 @@ const _getMenuDishes = (allReviews, allDishes, dishType) => {
   const dishes = shuffledDishes.slice(0, MAX_DISHES_MENU);
 
   const menu = dishes.map(dish => {
-    const userReviews = _getDishReviews(allReviews);
+    const userReviews = _getDishReviews(allReviews, dish.reviews);
     return {
       ...dish,
       userReviews
@@ -151,9 +152,11 @@ exports.create = async (req, res, next) => {
       message: "Restaurant created with Success!",
       id
     });
-  } catch (error) {
+  } catch (err) {
+    debug(err);
+
     return res.status(500).json({
-      error
+      message: "Error when trying to Create Restaurant."
     });
   }
 };
@@ -165,9 +168,11 @@ exports.createInBatch = async (req, res, next) => {
     return res.status(201).json({
       message: "Restaurant created with Success!"
     });
-  } catch (error) {
+  } catch (err) {
+    debug(err);
+
     return res.status(500).json({
-      error
+      message: "Error when trying to Create Restaurants."
     });
   }
 };
@@ -179,9 +184,11 @@ exports.readAll = async (req, res, next) => {
     return res.status(200).json({
       restaurants
     });
-  } catch (error) {
+  } catch (err) {
+    debug(err);
+
     return res.status(500).json({
-      error
+      message: "Error when trying to Read All Restaurant."
     });
   }
 };
@@ -215,9 +222,11 @@ exports.readById = async (req, res, next) => {
       },
       menu
     });
-  } catch (error) {
+  } catch (err) {
+    debug(err);
+
     return res.status(500).json({
-      error
+      message: "Error when trying to Read Restaurant."
     });
   }
 };
@@ -243,9 +252,11 @@ exports.update = async (req, res, next) => {
     return res.status(404).json({
       message: "Restaurant Not Found"
     });
-  } catch (error) {
+  } catch (err) {
+    debug(err);
+
     return res.status(500).json({
-      error
+      message: "Error when trying to Update Restaurant."
     });
   }
 };
@@ -265,9 +276,11 @@ exports.delete = async (req, res, next) => {
     return res.send(404).json({
       message: "Restaurant Not Found"
     });
-  } catch (error) {
+  } catch (err) {
+    debug(err);
+
     return res.status(500).json({
-      error
+      message: "Error when trying to Delete Restaurant."
     });
   }
 };
@@ -308,9 +321,11 @@ exports.getNearbyRestaurants = async (req, res, next) => {
     return res.status(200).json({
       restaurants: restaurants.slice(0, MAX_NEARBY_RESTAURANTS)
     });
-  } catch (error) {
+  } catch (err) {
+    debug(err);
+
     return res.status(500).json({
-      error
+      message: "Error when trying to Read by Dishe Type."
     });
   }
 };
@@ -356,9 +371,11 @@ exports.filter = async (req, res, next) => {
     return res.status(200).json({
       restaurants
     });
-  } catch (error) {
+  } catch (err) {
+    debug(err);
+
     return res.status(500).json({
-      error
+      message: "Error when trying to Filter Restaurants."
     });
   }
 };

@@ -196,7 +196,7 @@
     "stars": 4,
     "location": {
       "coordinates": [-3.73535, -38.48916],
-      "address": "Frederico Borges st, 616 - Varjota Fortaleza,"
+      "address": "Frederico Borges st, 616 - Varjota, Fortaleza"
     },
     "operatingHours": { "open": "19:00", "close": "00:00" },
     "description": "We have a lot of possibilites of pastas, but we also have the most delicious desserts and salads of the city. Visit us!",
@@ -336,7 +336,7 @@
     "stars": 4.5,
     "location": {
       "coordinates": [-3.73664, -38.56966],
-      "address": "Mister Hull av, 4300 - Presidente. Kennedy, Fortaleza"
+      "address": "Mister Hull av, 4300 - Pres. Kennedy, Fortaleza"
     },
     "operatingHours": { "open": "11:00", "close": "22:00" },
     "description": "With the best of Japan culture, we serve the most delicious dishes in the city. Come and see for yourself!",
@@ -392,7 +392,7 @@
     "stars": 4.5,
     "location": {
       "coordinates": [-3.70861, -38.59028],
-      "address": "Coronel de Carvalho av, 606 - Vila Velha, Fortaleza - CE, 61936-235"
+      "address": "Coronel de Carvalho av, 606 - Vila Velha, Fortaleza"
     },
     "operatingHours": { "open": "18:00", "close": "00:00" },
     "description": "The best options for those tat has a refined taste, and is always looking for a extraordinary thing to dinner.",
@@ -420,7 +420,7 @@
     "stars": 4.5,
     "location": {
       "coordinates": [-3.73209, -38.54976],
-      "address": "Conrado Cabral st, 802-E - São Gerardo, Fortaleza"
+      "address": "Conrado Cabral st, 802 - São Gerardo, Fortaleza"
     },
     "operatingHours": { "open": "17:00", "close": "23:00" },
     "description": "The most diversified menu in the city, and with a lot of different options that will make you come back!",
