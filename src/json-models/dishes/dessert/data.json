@@ -237,7 +237,7 @@
     "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/medium/banana-pie.jpeg",
     "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/desserts/thumbnail/banana-pie.jpeg",
     "title": "Banana Cream Pie",
-    "description": "A creamy and delicious dessert made with one of the most famous fruit of the world.",
+    "description": "A creamy and delicious dessert made with one of the most famous fruits of the world.",
     "type": "Dessert",
     "stars": 4.5,
     "reviews": 11,

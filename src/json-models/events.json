@@ -65,7 +65,7 @@
     "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/thumbnail/only-grill.jpeg",
     "smallImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/events/small/only-grill.jpeg",
     "title": "Only on Grill",
-    "description": "Wishing a juicy steak for your dinner? You'll find the best of the grill in the city right below.",
+    "description": "Wishing a juicy steak for your dinner? You'll find the best of the grill in the city right here.",
     "dishesTypes": ["Barbecue"],
     "restaurantsParticipating": 17
   },

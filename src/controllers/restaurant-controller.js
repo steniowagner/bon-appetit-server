@@ -17,8 +17,7 @@ const _getRandomNumber = (minValue, maxValue) => {
   return randomNumber;
 };
 
-const _getDishReviews = allReviews => {
-  const numberOfReviews = _getRandomNumber(1, allReviews.length);
+const _getDishReviews = (allReviews, numberOfReviews) => {
   const shuffledReviews = shuffleArray(allReviews);
 
   return shuffledReviews.slice(0, numberOfReviews);
@@ -29,11 +28,10 @@ const _getMenuDishes = (allReviews, allDishes, dishType) => {
     dishe => dishe.type === dishType
   );
   const shuffledDishes = shuffleArray(dishesFilteredByType);
-  const numberOfDishes = _getRandomNumber(1, allDishes.length);
   const dishes = shuffledDishes.slice(0, MAX_DISHES_MENU);
 
   const menu = dishes.map(dish => {
-    const userReviews = _getDishReviews(allReviews);
+    const userReviews = _getDishReviews(allReviews, dish.reviews);
     return {
       ...dish,
       userReviews
