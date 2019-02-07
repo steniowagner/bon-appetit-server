@@ -24,7 +24,7 @@ exports.populate = async (req, res, next) => {
     debug(err);
 
     return res.status(500).json({
-      message: "Error when trying to Populate Database."
+      message: "Error when trying to Populate the Database."
     });
   }
 };
@@ -53,7 +53,7 @@ exports.clear = async (req, res, next) => {
     debug(err);
 
     return res.status(500).json({
-      message: "Error when trying to Populate Database."
+      message: "Error when trying to Clear the Database."
     });
   }
 };
