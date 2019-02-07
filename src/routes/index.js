@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 });
 
 router.use("/restaurant", require("./restaurant"));
-router.use("/data", require("./data-management"));
+// router.use("/data", require("./data-management"));
 router.use("/review", require("./review"));
 router.use("/event", require("./event"));
 router.use("/dish", require("./dish"));
