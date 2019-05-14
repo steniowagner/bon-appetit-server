@@ -497,7 +497,7 @@ This routes are used to make CRUD operations with Reviews.
 ```json
 {
    "latitude": "Number",
-   "longitude: "Number"
+   "longitude: "Number",
 }
 ```
 
