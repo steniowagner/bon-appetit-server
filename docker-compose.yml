@@ -1,0 +1,12 @@
+version: '3'
+services:
+  datastore:
+    image: "mongo:latest"
+  backend:
+    build: .
+    environment:
+      DATABASE_URL: mongodb://datastore:27017/bon-appetit
+      PORT: "3001"
+      NODE_ENV: production      
+    ports:
+      - "3001:3001"
