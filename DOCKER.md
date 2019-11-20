@@ -1,5 +1,14 @@
 # Docker readme
 
+## Get the source code
+
+Get the code and checkout the branch
+
+```sh
+git clone https://github.com/rastaman/bon-appetit-server.git
+git checkout docker_integration
+```
+
 ## Build and run
 
 ```sh
@@ -27,6 +36,11 @@ $ curl -s -H 'Content-Type: application/json' http://${IPV4}:3001/bon-appetit/ap
 {
   "restaurants": []
 }
+```
+
+## Feeding datas
+
+```sh
 $ for i in restaurant review event; do
   curl -i -H 'Content-Type: application/json' -X POST -d @src/json-models/${i}s.json http://${IPV4}:3001/bon-appetit/api/v1/${i}/batch
 done
@@ -72,6 +86,11 @@ $ export DISHES=$(find src/json-models/dishes -name "*.json" | gpaste -d" " -s)
 for d in $DISHES; do
   curl -i -H 'Content-Type: application/json' -X POST -d @${d} http://${IPV4}:3001/bon-appetit/api/v1/dish/batch
 done
+```
+
+### Checking that dishes exists
+
+```sh
 $ curl -s -H 'Content-Type: application/json' http://${IPV4}:3001/bon-appetit/api/v1/dish | jq . | head -20
 {
   "dishes": [
