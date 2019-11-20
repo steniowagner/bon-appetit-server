@@ -67,6 +67,33 @@ Date: Wed, 20 Nov 2019 19:22:52 GMT
 Connection: keep-alive
 
 {"message":"Events created with Success!"}
+$ export DISHES=$(find src/json-models/dishes -name "*.json" | gpaste -d" " -s)
+...
+for d in $DISHES; do
+  curl -i -H 'Content-Type: application/json' -X POST -d @${d} http://${IPV4}:3001/bon-appetit/api/v1/dish/batch
+done
+$ curl -s -H 'Content-Type: application/json' http://${IPV4}:3001/bon-appetit/api/v1/dish | jq . | head -20
+{
+  "dishes": [
+    {
+      "ingredients": [
+        "200g risotto rice",
+        "1 large garlic clove",
+        "2 spring onions",
+        "900ml low-salt chicken stock",
+        "120g frozen peas",
+        "1 large courgette",
+        "50g grated medium",
+        "140g cooked prawns"
+      ],
+      "imageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/homemade/large/toddler-recipe-microwave-courgette-and-pea-risotto-prawns.jpeg",
+      "mediumImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/homemade/medium/toddler-recipe-microwave-courgette-and-pea-risotto-prawns.jpeg",
+      "thumbnailImageURL": "https://s3-sa-east-1.amazonaws.com/bon-appetit-resources/dishes/homemade/thumbnail/toddler-recipe-microwave-courgette-and-pea-risotto-prawns.jpeg",
+      "title": "Microwave courgette and pea risotto with prawns",
+      "description": "If you're after a family-friendly meal that takes under 30 minutes, try this courgette and pea risotto.",
+      "type": "Homemade",
+      "stars": 4,
+...
 ```
 
 ### Rebuilding the backend

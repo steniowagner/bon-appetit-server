@@ -42,12 +42,15 @@ exports.createInBatch = async (req, res, next) => {
   try {
     await DishDAO.createInBatch(req.body);
 
-    return res.status(201);
-  } catch (error) {
-    return res.status(500).send({
-      error
+    return res.status(201).json({
+      message: "Dish created with Success!"
     });
-  }
+  } catch (error) {
+    debug(error);
+
+    return res.status(500).json({
+      message: "Error when trying to Create Dishes."
+    });
 };
 
 exports.readAll = async (req, res, next) => {
